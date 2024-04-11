@@ -3238,7 +3238,7 @@
 					"name": "Data",
 					"item": [
 						{
-							"name": "❗️Get Sensor Data",
+							"name": "Get Sensor Data",
 							"id": "4e26aa8e-6ca5-4bb6-ae22-9ed3e773e78c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3258,7 +3258,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{region}}.verkada.com/environment/v1/data?device_ids=4cb1cdde-a59d-48ae-8f7b-499f66d6288e&start_time=1712682000",
+									"raw": "https://{{region}}.verkada.com/environment/v1/data?device_id=",
 									"protocol": "https",
 									"host": [
 										"{{region}}",
@@ -3272,15 +3272,15 @@
 									],
 									"query": [
 										{
-											"key": "device_ids",
-											"value": "4cb1cdde-a59d-48ae-8f7b-499f66d6288e",
+											"key": "device_id",
+											"value": "",
 											"description": "** REQUIRED ** A comma separated list of sensor IDs."
 										},
 										{
 											"key": "start_time",
-											"value": "1712682000",
+											"value": "",
 											"description": "The start of the time range for requested alerts. Formatted as a Unix timestamp in seconds. Default value is an hour from the current time.",
-											"type": "text"
+											"disabled": true
 										},
 										{
 											"key": "end_time",
