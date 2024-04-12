@@ -1,0 +1,3625 @@
+{
+	"info": {
+		"_postman_id": "1c442532-0983-4ae8-82b3-df4942f36041",
+		"name": "Verkada Command API",
+		"description": "[https://apidocs.verkada.com/reference/introduction](https://apidocs.verkada.com/reference/introduction)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Camera API",
+			"item": [
+				{
+					"name": "Alerts",
+					"item": [
+						{
+							"name": "Get Alerts",
+							"id": "bd3e06d5-b04a-4523-baa3-1ef11a2e4c60",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								},
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/alerts?include_image_url=false&page_size=100",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"alerts"
+									],
+									"query": [
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested notifications. Formatted as a Unix timestamp in seconds. Default value is an hour ago from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested notifications. Formatted as a Unix timestamp in seconds. Default value is the current time.",
+											"disabled": true
+										},
+										{
+											"key": "include_image_url",
+											"value": "false",
+											"description": "The flag to include/exclude image url for notification.  Defaults to false."
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "100",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200."
+										},
+										{
+											"key": "notification_type",
+											"value": "",
+											"description": "One or multiple comma separated values from person_of_interest, tamper, crowd, motion, camera_offline, camera_online.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getnotificationsviewv1](https://apidocs.verkada.com/reference/getnotificationsviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "a46bce79-4292-4d99-8da8-48676cb811e0"
+				},
+				{
+					"name": "LPR",
+					"item": [
+						{
+							"name": "Get seen license plates",
+							"id": "e785a909-c18d-433e-8266-528865912355",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/images?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"images"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "license_plate",
+											"value": "",
+											"description": "License plate number to filter by.",
+											"disabled": true
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range. Formatted as a Unix timestamp in seconds. Defaults to a day from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range. Formatted as a Unix timestamp in seconds. Defaults to a day from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Timestamps for a License Plate",
+							"id": "7ed0ea93-43cb-40f9-be64-650b87e50574",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/timestamps?camera_id={{camera_id}}&license_plate=&start_time=&end_time=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"timestamps"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "license_plate",
+											"value": "",
+											"description": "** REQUIRED ** The requested license plate number."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range. Formatted as a Unix timestamp in seconds. Defaults to a day from the current time."
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range. Formatted as a Unix timestamp in seconds. Defaults to a day from the current time."
+										},
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All License Plates of Interest",
+							"id": "1b01bbe0-afa3-436f-ac9f-e628a29b1ca5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"license_plate_of_interest"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 1000. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a License Plate of Interest",
+							"id": "b2cbfa46-66ed-441c-b2fd-2da94721c2ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest?license_plate=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"license_plate_of_interest"
+									],
+									"query": [
+										{
+											"key": "license_plate",
+											"value": "",
+											"description": "** REQUIRED ** The license plate number of the License Plate of Interest."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a License of Interest",
+							"id": "91a0b08a-4b4a-4eb3-a5b3-0b32b72250be",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"description\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest?license_plate=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"license_plate_of_interest"
+									],
+									"query": [
+										{
+											"key": "license_plate",
+											"value": "",
+											"description": "** REQUIRED ** The license plate number of the License Plate of Interest. Update description in the Body."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a License Plate of Interest",
+							"id": "cc839491-82b9-41f2-bafc-476006a386fe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"\",\n  \"license_plate\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest"
+							},
+							"response": []
+						}
+					],
+					"id": "a981abbe-cab5-4543-b031-5ad3fea5422d"
+				},
+				{
+					"name": "Analytics",
+					"item": [
+						{
+							"name": "Get Max People/Vehicle Counts",
+							"id": "e3a8feea-c5e6-4ebe-8321-b92d8d39115d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/max_object_counts?camera_id={{camera_id}}&start_time=&end_time=&search_zones=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"max_object_counts"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time. If only providing a start time, the same value will be used for end_time\n"
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. It can only be used if start_time is also provided"
+										},
+										{
+											"key": "search_zones",
+											"value": "",
+											"description": "Zones to search Formatted as coordinates ranging from [0,0] to [9,9] e.g., [[3,3],[3,4],[4,3],[4,4]]"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1](https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Set Object Position MQTT Config",
+							"id": "807a750a-542a-4ffb-8da4-b99f0d35cb15",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"camera_id\": \"camera_id\",\n  \"client_password\": \"client_password\",\n  \"client_username\": \"client_username\",\n  \"broker_host_port\": \"443\",\n  \"broker_cert\": \"broker_cert\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/object_position_mqtt",
+								"description": "[https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview](https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get People/Vehicle Counts",
+							"id": "95daaa04-d907-4d1a-865e-20a3122a24f3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/object_counts?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"object_counts"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is an hour ago from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getobjectcountsviewv1](https://apidocs.verkada.com/reference/getobjectcountsviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Occupancy Trend Data",
+							"id": "b497db3e-645b-4e7c-ac07-0e08c32cc700",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"occupancy_trends"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "interval",
+											"value": "",
+											"description": "An enumeration: \"15_minutes\", \"1_hour\", \"6_hours\", \"12_hours\", \"1_day\", \"30_days\".  Default \"1_hour\"",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "",
+											"description": "An enumeration: \"person\" or \"vehicle\".  Default = \"person\"",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
+							},
+							"response": []
+						}
+					],
+					"id": "1f44a13c-37f1-4aec-bee2-840f4f28aae4"
+				},
+				{
+					"name": "CloudBackup",
+					"item": [
+						{
+							"name": "Get cloud backup settings for a certain camera",
+							"id": "3588694a-d31d-48bc-9340-cb3ba80b4c09",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/cloud_backup/settings?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"cloud_backup",
+										"settings"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getcloudbackupviewv1](https://apidocs.verkada.com/reference/getcloudbackupviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Update cloud backup settings for a certain camera",
+							"id": "98d665e4-f620-4a29-9d7d-65abaaddf421",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"camera_id\": \"\",\n  \"days_to_preserve\": \"\",\n  \"enabled\": 1,\n  \"time_to_preserve\": \"\",\n  \"upload_timeslot\": \"\",\n  \"video_quality\": \"\",\n  \"video_to_upload\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/cloud_backup/settings",
+								"description": "[https://apidocs.verkada.com/reference/postcloudbackupviewv1](https://apidocs.verkada.com/reference/postcloudbackupviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "282ec475-4c11-4183-af90-d0b460f39336"
+				},
+				{
+					"name": "Devices",
+					"item": [
+						{
+							"name": "Get Camera Data",
+							"id": "b76c5b8b-a47b-4186-ba57-325d5f2ed06f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "https://{{region}}.verkada.com/cameras/v1/devices",
+								"description": "[https://apidocs.verkada.com/reference/getcamerainfoviewv1](https://apidocs.verkada.com/reference/getcamerainfoviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "e12b95b8-e86d-49d4-8468-f59867f85421"
+				},
+				{
+					"name": "Footage",
+					"item": [
+						{
+							"name": "Get Link to Footage",
+							"id": "93907237-4f51-49d2-a0fa-622ea76b9e82",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/link?camera_id={{camera_id}}&timestamp=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"link"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "timestamp",
+											"value": "",
+											"description": "The timestamp of the footage on a specified camera. Formatted as a Unix timestamp in seconds. If no timestamp is specified, a live link will be returned"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/gethistoryurlviewv1](https://apidocs.verkada.com/reference/gethistoryurlviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Thumbnail Image",
+							"id": "202b60f9-63cf-4058-beaa-5f85eabcb6a9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/thumbnails?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"thumbnails"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "timestamp",
+											"value": "",
+											"description": "The approximate timestamp of the requested thumbnail. Formatted as a Unix timestamp in seconds.\nDefaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "resolution",
+											"value": "",
+											"description": "An enumeration.  \"low-res\" or \"hi-res\".  Default: \"low-res\"",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Thumbnail Link",
+							"id": "943b0e87-788a-4933-862b-d60119e7cbe4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/thumbnails/link?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"thumbnails",
+										"link"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "timestamp",
+											"value": "",
+											"description": "The timestamp when thumbnail was captured. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "expiry",
+											"value": "",
+											"description": "The expiry duration for the generated link. Formatted as a Unix timestamp in seconds. Defaults to one day.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Streaming Token",
+							"id": "20e59de8-632d-4384-bbab-0cd0818f0a87",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-streamingapi-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/token?expiration=3600",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"token"
+									],
+									"query": [
+										{
+											"key": "expiration",
+											"value": "3600",
+											"description": "The expiration time duration, in seconds from the current timestamp, for which the JWT remains valid. The maximum allowable value is 3600 seconds. Once a token has expired, it is no longer functional for streaming footage.\n"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getfootagetokenviewv1](https://apidocs.verkada.com/reference/getfootagetokenviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Stream Footage (Live or Historical)",
+							"id": "90f01c3b-9876-4643-bf75-9d7400d1230b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-streamingapi-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/stream/cameras/v1/footage/stream/stream.m3u8?org_id={{org_id}}&camera_id={{camera_id}}&start_time=0&end_time=0&resolution=low_res&type=stream&jwt={{streamJWT}}&codec=hevc",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"stream",
+										"cameras",
+										"v1",
+										"footage",
+										"stream",
+										"stream.m3u8"
+									],
+									"query": [
+										{
+											"key": "org_id",
+											"value": "{{org_id}}",
+											"description": "** REQUIRED ** The unique identifier of the organization."
+										},
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "0",
+											"description": "The start time of the video stream on a specified camera. Formatted as epoch time in seconds. For live footage stream, set to 0. For history footage stream, start_time - end_time should be less than or equal to 3600. Default: 0"
+										},
+										{
+											"key": "end_time",
+											"value": "0",
+											"description": "The end time of the video stream on a specified camera. Formatted as epoch time in seconds. For live footage stream, set to 0. For history footage stream, start_time - end_time should be less than or equal to 3600. Default: 0"
+										},
+										{
+											"key": "resolution",
+											"value": "low_res",
+											"description": "The resolution of the video stream. For live video stream, set to high_res for the high resolution stream, and set to low_res for the low resolution stream. For history video streaming, set to high_res for a mix of low and high resolution video stream with high resolution footage prioritized when available and set to low_res for only low resolution footage. Default: low_res"
+										},
+										{
+											"key": "type",
+											"value": "stream",
+											"description": "The video type. This parameter is reserved for solely future compatibility. Set to stream. Default: stream"
+										},
+										{
+											"key": "jwt",
+											"value": "{{streamJWT}}",
+											"description": "A short lived token that will be used to verify the permission to stream live or history footage from the camera. This can be acquired with the Get Streaming Token endpoint."
+										},
+										{
+											"key": "codec",
+											"value": "hevc",
+											"description": "The codec used for the video stream. Default: hevc"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getfootagestreamviewv1](https://apidocs.verkada.com/reference/getfootagestreamviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Latest Thumbnail Image",
+							"id": "12fd66e0-b1e2-4c52-b0b2-0ab8091802cc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/thumbnails/latest?camera_id={{camera_id}}&resolution=hi-res",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"thumbnails",
+										"latest"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "resolution",
+											"value": "hi-res",
+											"description": "An enumeration.  \"low-res\" or \"hi-res\".  Default: \"low-res\""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getthumbnaillatestviewv1](https://apidocs.verkada.com/reference/getthumbnaillatestviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "f37d7167-f907-46f6-a0f9-7be900ca41a5"
+				},
+				{
+					"name": "People",
+					"item": [
+						{
+							"name": "Get All Person of Interest",
+							"id": "a97e46d2-dfee-4727-b200-e36da6c4e294",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"people",
+										"person_of_interest"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": null,
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": null,
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Person of Interest",
+							"id": "be9e7429-daf5-4cc0-a565-28118fbb8d70",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"base64_image\": \"\",\n    \"label\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest",
+								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Person of Interest",
+							"id": "72a0d9dd-3bdc-4cd4-b521-882b3111b1c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"label\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest?person_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"people",
+										"person_of_interest"
+									],
+									"query": [
+										{
+											"key": "person_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/patchpersonofinterestviewv1](https://apidocs.verkada.com/reference/patchpersonofinterestviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Person of Interest",
+							"id": "9dd53e88-eb7b-4644-8ecd-a774b79894d7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest?person_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"people",
+										"person_of_interest"
+									],
+									"query": [
+										{
+											"key": "person_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deletepersonofinterestviewv1](https://apidocs.verkada.com/reference/deletepersonofinterestviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "c5e5fc84-a087-48e7-8bfd-48c160240428"
+				}
+			],
+			"id": "2b27f9e8-4d2b-4d78-9653-5bb96a2fd218"
+		},
+		{
+			"name": "Core API",
+			"item": [
+				{
+					"name": "Audit Log",
+					"item": [
+						{
+							"name": "Get Audit Logs",
+							"id": "344d43bf-1a97-44ee-a17a-e641383a7b37",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/core/v1/audit_log",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"core",
+										"v1",
+										"audit_log"
+									],
+									"query": [
+										{
+											"key": "start_time",
+											"value": null,
+											"description": "The start of time range for requested audit logs. Formatted as a Unix timestamp in seconds. Defaults to an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": null,
+											"description": "The end of time range for requested audit logs. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": null,
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": null,
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getauditlogsviewv1](https://apidocs.verkada.com/reference/getauditlogsviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "dcc8a2f9-f249-4ee8-ae51-29aac04be38e"
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get User",
+							"id": "1fd21901-36ff-447b-85c7-2a82a08fd850",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/core/v1/user?user_id=&external_id",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"core",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": null,
+											"description": "A unique identifier managed externally provided by the consumer."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getuserviewv1](https://apidocs.verkada.com/reference/getuserviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"id": "ad940f6d-c97d-40d0-a03a-0ff67470eba3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/core/v1/user?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"core",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": null,
+											"description": "A unique identifier managed externally provided by the consumer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteuserviewv1](https://apidocs.verkada.com/reference/deleteuserviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"id": "771f53f4-2df1-47e9-a53e-4e242806baeb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company_name\": \"\",\n  \"department\": \"\",\n  \"department_id\": \"\",\n  \"email\": \"\",\n  \"employee_id\": \"\",\n  \"employee_type\": \"\",\n  \"external_id\": \"\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"middle_name\": \"\",\n  \"phone\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/core/v1/user?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"core",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": null,
+											"description": "A unique identifier managed externally provided by the consumer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putuserviewv1](https://apidocs.verkada.com/reference/putuserviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Create User",
+							"id": "a203ad66-9d92-4f6a-845c-bcdd078084d8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company_name\": \"\",\n  \"department\": \"\",\n  \"department_id\": \"\",\n  \"email\": \"\",\n  \"employee_id\": \"\",\n  \"employee_type\": \"\",\n  \"external_id\": \"\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"middle_name\": \"\",\n  \"phone\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/core/v1/user",
+								"description": "[https://apidocs.verkada.com/reference/postuserviewv1](https://apidocs.verkada.com/reference/postuserviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "22aaf2bd-2e79-44df-b599-a8a75cb96613",
+					"description": "[https://apidocs.verkada.com/reference/external-id-introduction](https://apidocs.verkada.com/reference/external-id-introduction)\n\n[https://apidocs.verkada.com/reference/command-user-object](https://apidocs.verkada.com/reference/command-user-object)"
+				}
+			],
+			"id": "28f770b7-2a46-4904-966b-ab5fc43b5546"
+		},
+		{
+			"name": "Access API",
+			"item": [
+				{
+					"name": "Access Groups",
+					"item": [
+						{
+							"name": "Get All Access Groups",
+							"id": "27205799-c8c9-4833-83fe-ccc854c57188",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "https://{{region}}.verkada.com/access/v1/access_groups",
+								"description": "[https://apidocs.verkada.com/reference/getaccessgroupsviewv1](https://apidocs.verkada.com/reference/getaccessgroupsviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Access Group",
+							"id": "cbc22ef6-5e29-4aeb-a03f-abff573c64a6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_groups/group?group_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_groups",
+										"group"
+									],
+									"query": [
+										{
+											"key": "group_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getaccessgroupviewv1](https://apidocs.verkada.com/reference/getaccessgroupviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Access Group",
+							"id": "d0b820a0-4f47-4bd7-a7a5-8545a79edd8d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_groups/group?group_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_groups",
+										"group"
+									],
+									"query": [
+										{
+											"key": "group_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteaccessgroupviewv1](https://apidocs.verkada.com/reference/deleteaccessgroupviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Access Group",
+							"id": "37431e22-4c24-4b5d-ae9f-0c3be771819f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/access/v1/access_groups/group",
+								"description": "[https://apidocs.verkada.com/reference/postaccessgroupviewv1](https://apidocs.verkada.com/reference/postaccessgroupviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove User from Access Group",
+							"id": "9d4a8d39-c271-4023-87ce-b6d54150c023",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_groups/group/user?group_id=&user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_groups",
+										"group",
+										"user"
+									],
+									"query": [
+										{
+											"key": "group_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Group managed by Verkada."
+										},
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": null,
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteaccessgroupuserviewv1](https://apidocs.verkada.com/reference/deleteaccessgroupuserviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Add User to Access Group",
+							"id": "17d313a7-2652-4177-b61b-f43caa357fab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  //\"external_id\": \"\"\n  \"user_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_groups/group/user?group_id=0d620b08-dadb-442e-8bde-55afbdeddbbb",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_groups",
+										"group",
+										"user"
+									],
+									"query": [
+										{
+											"key": "group_id",
+											"value": "0d620b08-dadb-442e-8bde-55afbdeddbbb",
+											"description": "** REQUIRED ** The unique identifier of the Access Group managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccessgroupuserviewv1](https://apidocs.verkada.com/reference/putaccessgroupuserviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "70adf857-508b-412c-8b99-84b2001de0eb"
+				},
+				{
+					"name": "Access User Information",
+					"item": [
+						{
+							"name": "Get All Access Users",
+							"id": "d4f9c7d3-2944-4064-a7e0-43848278d847",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "https://{{region}}.verkada.com/access/v1/access_users",
+								"description": "[https://apidocs.verkada.com/reference/getaccessmembersviewv1](https://apidocs.verkada.com/reference/getaccessmembersviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Access Information Object",
+							"id": "5791289c-fb81-4509-be1c-f4b45b61db24",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getaccessuserviewv1](https://apidocs.verkada.com/reference/getaccessuserviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Send Pass App Invite for User",
+							"id": "516a6c3a-0ee3-4266-b09b-9d08f35b99fa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/pass/invite?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"pass",
+										"invite"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/postsendpassappinviteviewv1](https://apidocs.verkada.com/reference/postsendpassappinviteviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Set End Date for User",
+							"id": "d387f8d4-8363-4ead-9428-fb57dac66344",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"end_date\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/end_date?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"end_date"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccessenddateviewv1](https://apidocs.verkada.com/reference/putaccessenddateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Set Start Date for User",
+							"id": "a5c3279c-0444-40c2-9d14-d8820d9f2858",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"start_date\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/start_date?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"start_date"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccessstartdateviewv1](https://apidocs.verkada.com/reference/putaccessstartdateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Entry Code for User",
+							"id": "6e08cdf3-1f69-4ead-b20a-2b561e814211",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/entry_code?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"entry_code"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteaccessuserpinviewv1](https://apidocs.verkada.com/reference/deleteaccessuserpinviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Set Entry Code for User",
+							"id": "445c48aa-1f5e-4300-b528-6d7097d8517f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"entry_code\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/entry_code?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"entry_code"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "override",
+											"value": null,
+											"description": "The flag that states whether or not the client wants to apply the given entry code to the given user even if the entry code is already in use by another user. This will reset the other user's entry code.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccessuserpinviewv1](https://apidocs.verkada.com/reference/putaccessuserpinviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Activate BLE for Access User",
+							"id": "0798ef09-39af-428f-827d-35b9ba76785b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/ble/activate?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"ble",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putactivateblemethodviewv1](https://apidocs.verkada.com/reference/putactivateblemethodviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Activate Remote Unlock for User",
+							"id": "21b97a05-40d6-42d2-be3c-9722c7e258c2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/remote_unlock/activate?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"remote_unlock",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putactivateremoteunlockviewv1](https://apidocs.verkada.com/reference/putactivateremoteunlockviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate Remote Unlock for User",
+							"id": "2c850df6-d87d-4a3e-b5a0-396dea7756cb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/remote_unlock/deactivate?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"remote_unlock",
+										"deactivate"
+									],
+									"query": [
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putdeactivateremoteunlockviewv1](https://apidocs.verkada.com/reference/putdeactivateremoteunlockviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate BLE for Access User",
+							"id": "0db7ae3c-6e7c-4fb1-a3e1-6370ec7fb413",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/ble/deactivate?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"ble",
+										"deactivate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putdeactivateblemethodviewv1](https://apidocs.verkada.com/reference/putdeactivateblemethodviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "8d1996a5-9a6c-4ff6-b78c-882056ff77b0"
+				},
+				{
+					"name": "Access Credentials",
+					"item": [
+						{
+							"name": "Delete Access Card",
+							"id": "9651f908-5dae-44d2-9e36-cc4a6ece8eef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/card?user_id=&card_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"card"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteaccesscardviewv1](https://apidocs.verkada.com/reference/deleteaccesscardviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Activate Access Card",
+							"id": "6607b051-4aa4-47f7-9bf9-e4d50f00358f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/card/activate?user_id=&card_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"card",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccesscardactivateviewv1](https://apidocs.verkada.com/reference/putaccesscardactivateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate Access Card",
+							"id": "e69b8e2b-3e6b-4e28-bef2-16442eae07e9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/card/deactivate?user_id=&card_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"card",
+										"deactivate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "card_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putaccesscarddeactivateviewv1](https://apidocs.verkada.com/reference/putaccesscarddeactivateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate License Plate",
+							"id": "e00ee47b-4bc0-4b26-813f-5134dd8be22f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/license_plate/deactivate?user_id=&license_plate_number=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"license_plate",
+										"deactivate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "license_plate_number",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putlicenseplatedeactivateviewv1](https://apidocs.verkada.com/reference/putlicenseplatedeactivateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete License Plate from User",
+							"id": "3aa63e86-de6c-443c-975f-f1d72ff612f3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/license_plate?user_id=&license_plate_number=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"license_plate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "license_plate_number",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deletelicenseplateviewv1](https://apidocs.verkada.com/reference/deletelicenseplateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Activate License Plate",
+							"id": "9f0146e9-58e2-4f9a-aa78-221055243f7c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/license_plate/activate?user_id=&license_plate_number=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"license_plate",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										},
+										{
+											"key": "license_plate_number",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Access Card managed by Verkada."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putlicenseplateactivateviewv1](https://apidocs.verkada.com/reference/putlicenseplateactivateviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Card to User",
+							"id": "bb50a42f-b4ab-451e-b48b-365a6699c7e3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  // Bool value specifying if the credential is currently active. Can be True or False. Default value is False.\n  \"active\": true,\n  // The card number used to grant or deny access to a door.\n  \"card_number\": \"\",\n  // The facility code used to grant or deny access to a door.\n  \"facility_code\": \"\",\n  // The type of card used by Verkada to interpret raw credential information.\n  \"type\": \"\"\n  // The card number in base36 used to grant or deny access to a door.\n  //\"card_number_base36\": \"\",\n  // The card number in hexadecimal used to grant or deny access to a door.\n  //\"card_number_hex\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/card?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"card"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/postaccesscardviewv1](https://apidocs.verkada.com/reference/postaccesscardviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Add License Plate to User",
+							"id": "a67c907b-692b-416d-b363-85ee9c3a64de",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  // Bool value specifying if the license plate credential is currently active. Default value is False.\n  \"active\": true,\n  // ** REQUIRED ** The unique license plate number identifying a license plate credential for a user.\n  \"license_plate_number\": \"\",\n  //The name to be given to the license plate credential.\n  \"name\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/credentials/license_plate?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"credentials",
+										"license_plate"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": "",
+											"description": "A unique identifier managed externally provided by the customer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/postlicenseplateviewv1](https://apidocs.verkada.com/reference/postlicenseplateviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "9d69becc-5773-4f0a-8a7a-62aab7937a83"
+				},
+				{
+					"name": "Access Doors",
+					"item": [
+						{
+							"name": "Get Doors",
+							"id": "48bad5f4-e089-4266-8adf-1e9c45c668ec",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/doors",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"doors"
+									],
+									"query": [
+										{
+											"key": "door_id",
+											"value": "",
+											"description": "A list of Verkada site_ids to control which doors are returned.",
+											"disabled": true
+										},
+										{
+											"key": "site_ids",
+											"value": "",
+											"description": "A list of Verkada door_ids to control which doors are returned.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "TBD"
+							},
+							"response": []
+						},
+						{
+							"name": "User Door Unlock",
+							"id": "e0d5d672-70e7-44a1-9b29-5f45f1a353e3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // The unique identifier of the user managed by Verkada.\n    \"user_id\": \"\"\n    // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/access/v1/door/{{door_id}}/user_unlock",
+								"description": "TBD"
+							},
+							"response": []
+						},
+						{
+							"name": "Admin Door Unlock",
+							"id": "d828d123-7d07-475b-b01e-aef71e9279ff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // The unique identifier of the user managed by Verkada.\n    \"user_id\": \"\"\n    // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/access/v1/door/{{door_id}}/admin_unlock",
+								"description": "TBD"
+							},
+							"response": []
+						}
+					],
+					"id": "27d4d8c3-d8fa-4096-9574-9a676dbe70de"
+				}
+			],
+			"id": "2bf5dd55-86a9-47f2-b1aa-356e7d512f1b",
+			"description": "[https://apidocs.verkada.com/reference/access-user-guide](https://apidocs.verkada.com/reference/access-user-guide)"
+		},
+		{
+			"name": "Sensor API",
+			"item": [
+				{
+					"name": "Alerts",
+					"item": [
+						{
+							"name": "Get Sensor Alerts",
+							"id": "2fdc2d72-f842-4795-8e7f-b49116b28495",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/environment/v1/alerts?device_ids=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"environment",
+										"v1",
+										"alerts"
+									],
+									"query": [
+										{
+											"key": "device_ids",
+											"value": "",
+											"description": "** REQUIRED ** A comma separated list of sensor IDs."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested alerts. Formatted as a Unix timestamp in seconds. Default value is an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": null,
+											"description": "The end of the time range for requested alerts. Formatted in Unix timestamp in seconds. Default value is the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": null,
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": null,
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": null,
+											"description": "Retrieves alerts only for the given fields.  Fields must be one or multiple comma separated values from humidity, motion, noise_level, pm_2_5, pm_4_0, pm_1_0_0, tamper, temperature, tvoc(SV11), usa_air_quality_index, vape_index, carbon_dioxide, carbon_monoxide, barometric_pressure, formaldehyde, ambient_light, tvoc_index(SV23/SV25).  If left blank, alerts of all sensor types will be returned in the response.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getsensoralertsviewv1](https://apidocs.verkada.com/reference/getsensoralertsviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "a521b459-3c77-424a-9feb-954b42511af8"
+				},
+				{
+					"name": "Data",
+					"item": [
+						{
+							"name": "Get Sensor Data",
+							"id": "64571e8b-d715-4fc9-9d84-7dd2e3342d3d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/environment/v1/data?device_ids=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"environment",
+										"v1",
+										"data"
+									],
+									"query": [
+										{
+											"key": "device_ids",
+											"value": "",
+											"description": "** REQUIRED ** A comma separated list of sensor IDs."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested alerts. Formatted as a Unix timestamp in seconds. Default value is an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested alerts. Formatted in Unix timestamp in seconds. Default value is the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "",
+											"description": "Retrieves alerts only for the given fields.  Fields must be one or multiple comma separated values from humidity, motion, noise_level, pm_2_5, pm_4_0, pm_1_0_0, tamper, temperature, tvoc(SV11), usa_air_quality_index, vape_index, carbon_dioxide, carbon_monoxide, barometric_pressure, formaldehyde, ambient_light, tvoc_index(SV23/SV25).  If left blank, alerts of all sensor types will be returned in the response.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getsensordataviewv1](https://apidocs.verkada.com/reference/getsensordataviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "871170fe-8754-428b-a24f-1c8328364090"
+				}
+			],
+			"id": "b71dee00-e248-4ac1-a2e8-678cb11d32ae"
+		},
+		{
+			"name": "Guest API",
+			"item": [
+				{
+					"name": "Sites",
+					"item": [
+						{
+							"name": "Get Guest Sites",
+							"id": "1af64180-26e6-4d5d-9583-84f6771c87ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "https://{{region}}.verkada.com/guest/v1/sites",
+								"description": "[https://apidocs.verkada.com/reference/getguestsiteview](https://apidocs.verkada.com/reference/getguestsiteview)"
+							},
+							"response": []
+						}
+					],
+					"id": "bf9e4c7f-ca1a-4eec-b5a5-0d978221e499"
+				},
+				{
+					"name": "Visits",
+					"item": [
+						{
+							"name": "Get Guest Visits",
+							"id": "d02f0f32-bf50-447f-8bab-d9137c54e3f3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/guest/v1/visits?site_id=&start_time=&end_time=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"guest",
+										"v1",
+										"visits"
+									],
+									"query": [
+										{
+											"key": "site_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the Guest site. Valid sites can be retrieved with the Guest Site API."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "** REQUIRED ** The start of the time range for requested visits. Formatted as a UNIX timestamp. Must be at most one day away from end_time."
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "** REQUIRED ** The end of the time range for requested visits. Formatted as a UNIX timestamp. Must be at most one day away from start_time."
+										},
+										{
+											"key": "page_token",
+											"value": null,
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": null,
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getvisitview](https://apidocs.verkada.com/reference/getvisitview)"
+							},
+							"response": []
+						}
+					],
+					"id": "3bfd0cf2-20be-4f57-bea7-1a6ee1a14bbf"
+				}
+			],
+			"id": "bcf9c671-d060-44b6-8a35-4d40b4ffc58f"
+		},
+		{
+			"name": "Alarm API",
+			"item": [
+				{
+					"name": "Sites",
+					"item": [
+						{
+							"name": "Get Site Information",
+							"id": "16dea6b9-ec91-441e-ada1-bbbb078a4ed8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/alarms/v1/sites",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"alarms",
+										"v1",
+										"sites"
+									],
+									"query": [
+										{
+											"key": "site_ids",
+											"value": "",
+											"description": "A comma delimited list of site unique identifiers. If not supplied, will return information on all sites.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getalarmssitesviewv1](https://apidocs.verkada.com/reference/getalarmssitesviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "142a3f11-727d-47c3-97b1-7371d69bda97"
+				},
+				{
+					"name": "Devices",
+					"item": [
+						{
+							"name": "Get Alarm Devices",
+							"id": "457f31d9-8441-491a-aa64-feab983e13eb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/alarms/v1/devices?site_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"alarms",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "site_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the site"
+										},
+										{
+											"key": "device_ids",
+											"value": null,
+											"description": "A comma delimited list of device unique identifiers. If not supplied, all devices in the site will be returned.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getalarmsdevicesviewv1](https://apidocs.verkada.com/reference/getalarmsdevicesviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "0c766945-d1fb-45fa-81cb-fe9bdd130182"
+				}
+			],
+			"id": "8a487c23-a7e9-4ad7-b3f6-5a604e7335b1"
+		},
+		{
+			"name": "Events API",
+			"item": [
+				{
+					"name": "Get Events",
+					"id": "0f809359-adad-4e5e-b5fd-1677944bbf2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{region}}.verkada.com/events/v1/access",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"events",
+								"v1",
+								"access"
+							],
+							"query": [
+								{
+									"key": "start_time",
+									"value": "",
+									"description": "The start of the time range for requested events. Formatted as a Unix timestamp in seconds. Default value is an hour ago from the current time.",
+									"disabled": true
+								},
+								{
+									"key": "end_time",
+									"value": null,
+									"description": "The end of the time range for requested events. Formatted as a Unix timestamp in seconds. Default value is the current time.",
+									"disabled": true
+								},
+								{
+									"key": "page_token",
+									"value": null,
+									"description": "The pagination token used to fetch the next page of results.",
+									"disabled": true
+								},
+								{
+									"key": "page_size",
+									"value": null,
+									"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+									"disabled": true
+								},
+								{
+									"key": "event_type",
+									"value": null,
+									"description": "One or multiple comma separated values from door_opened, door_rejected, door_granted, door_forced_open, door_held_open, door_tailgating, door_crowd_detection, door_tamper, door_poi_detection, door_initialized, door_armed, door_armed_button_pressed, door_aux_unlock, door_locked, door_unlocked, door_closed, door_unarmed_event, door_code_entered_event, door_button_press_entered_event, door_acu_startup, door_lock_state_changed, door_lockdown, door_auxinput_change_state, door_auxinput_held, door_low_battery, door_critical_battery, door_user_database_corrupt, door_keycard_entered_accepted, door_keycard_entered_rejected, door_code_entered_accepted, door_code_entered_rejected, door_remote_unlock_accepted, door_remote_unlock_rejected, door_press_to_exit_accepted, door_ble_unlock_attempt_accepted, door_ble_unlock_attempt_rejected, door_acu_offline, door_fire_alarm_triggered, door_fire_alarm_released, door_acu_fire_alarm_triggered, door_acu_fire_alarm_released, door_schedule_toggle, door_lockdown_debounced, door_lp_presented_accepted, door_lp_presented_rejected, door_apb_double_entry, door_apb_double_exit, all_access_granted, all_access_rejected, door_auxoutput_activated.door_auxoutput_deactivated.",
+									"disabled": true
+								},
+								{
+									"key": "site_id",
+									"value": null,
+									"description": "One or multiple comma separated values of site identifiers.",
+									"disabled": true
+								},
+								{
+									"key": "device_id",
+									"value": null,
+									"description": "One or multiple comma separated values of device identifiers.",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": null,
+									"description": "One or multiple comma separated values of user identifiers.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/getviewingstationdevicesviewv1](https://apidocs.verkada.com/reference/getviewingstationdevicesviewv1)"
+					},
+					"response": []
+				}
+			],
+			"id": "4c52a981-b944-4c4e-930d-c5407c269d6a"
+		},
+		{
+			"name": "Viewing Station API",
+			"item": [
+				{
+					"name": "Get Viewing Station Devices",
+					"id": "61acc586-e69a-4896-8baa-e28670498448",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "https://{{region}}.verkada.com/viewing_station/v1/devices",
+						"description": "[https://apidocs.verkada.com/reference/getviewingstationdevicesviewv1](https://apidocs.verkada.com/reference/getviewingstationdevicesviewv1)"
+					},
+					"response": []
+				}
+			],
+			"id": "e394d257-96f4-4cd2-8057-fcdd412487b8"
+		}
+	]
+}
