@@ -3621,6 +3621,66 @@
 				}
 			],
 			"id": "e394d257-96f4-4cd2-8057-fcdd412487b8"
+		},
+		{
+			"name": "Verkada Helix API",
+			"item": [
+				{
+					"name": "Create a Helix Event",
+					"id": "e722b78b-9f58-4362-9006-bd291345a211",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/pass/invite?user_id=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"access",
+								"v1",
+								"access_users",
+								"user",
+								"pass",
+								"invite"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "",
+									"description": "The unique identifier of the user managed by Verkada."
+								},
+								{
+									"key": "external_id",
+									"value": "",
+									"description": "A unique identifier managed externally provided by the customer.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/postsendpassappinviteviewv1](https://apidocs.verkada.com/reference/postsendpassappinviteviewv1)"
+					},
+					"response": []
+				}
+			],
+			"id": "3643f2a4-a90a-4a24-b45f-1c8760ee4a0b"
 		}
 	]
 }
