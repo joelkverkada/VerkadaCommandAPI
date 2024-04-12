@@ -435,7 +435,8 @@
 							"response": []
 						}
 					],
-					"id": "a981abbe-cab5-4543-b031-5ad3fea5422d"
+					"id": "a981abbe-cab5-4543-b031-5ad3fea5422d",
+					"description": "License Plate Recognition"
 				},
 				{
 					"name": "Analytics",
