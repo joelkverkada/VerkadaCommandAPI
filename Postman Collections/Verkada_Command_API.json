@@ -4050,7 +4050,29 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"org_id\": \"a74fc6a6-4fc5-4e5c-88e5-57301683327a\",\n    \"webhook_type\": \"notification\",\n    \"created_at\": 1692131003,\n    \"webhook_id\": \"457eb610-03b4-4fa0-a8c7-c06f3142df50\",\n    \"data\": {\n        \"device_id\": \"dd47e8e4-dc18-47d9-8249-4607eaa884dd\",\n        \"created\": 1692131000,\n        \"notification_type\": \"door_keycard_entered_rejected\",\n        \"device_type\": \"access_control\",\n        \"door_id\": \"dd47e8e4-dc18-47d9-8249-4607eaa884dd\",\n        \"input_value\": \"151|39924\",\n        \"aux_info\": null,\n        \"user_info\": null,\n        \"lockdown_info\": null,\n        \"door_info\": null\n    }\n}",
+									"raw": "{\n    // Sampe Webhook Object\n\t\t\"org_id\": \"a74fc6a6-4fc5-4e5c-88e5-57301683327a\",\n    \"webhook_type\": \"notification\",\n    \"created_at\": 1692131003,\n    \"webhook_id\": \"457eb610-03b4-4fa0-a8c7-c06f3142df50\",\n    \"data\": {\n        \"device_id\": \"dd47e8e4-dc18-47d9-8249-4607eaa884dd\",\n        \"created\": 1692131000,\n        \"notification_type\": \"door_keycard_entered_rejected\",\n        \"device_type\": \"access_control\",\n        \"door_id\": \"dd47e8e4-dc18-47d9-8249-4607eaa884dd\",\n        \"input_value\": \"151|39924\",\n        \"aux_info\": null,\n        \"user_info\": null,\n        \"lockdown_info\": null,\n        \"door_info\": null\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{your_webhook_listener}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Door Remote Unlock Accepted Event",
+							"id": "e87796ac-b884-47f3-acb2-2039864f676a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  // Sampe Webhook Object\n\t\"org_id\": \"a74fc6a6-4fc5-4e5c-88e5-57301683327a\",\n  \"webhook_type\": \"notification\",\n  \"created_at\": 1692235651,\n  \"webhook_id\": \"60a168de-df82-40bb-b31e-a7fd7c49d79d\",\n  \"data\": {\n    \"device_id\": \"a1faa47c-330a-45aa-8fe6-cacb293400c2\",\n    \"created\": 1692235647,\n    \"notification_type\": \"door_remote_unlock_accepted\",\n    \"device_type\": \"access_control\",\n    \"door_id\": \"a1faa47c-330a-45aa-8fe6-cacb293400c2\",\n    \"input_value\": null,\n    \"aux_info\": null,\n    \"user_info\": {\n      \"user_id\": \"47c39a50-3575-40ee-bfe9-46e0fa8447db\",\n      \"name\": \"John Smith\",\n      \"email\": \"j.smith@verkada.com\",\n      \"first_name\": \"John\",\n      \"last_name\": \"Smith\",\n      \"phone\": \"+1234567890\"\n    },\n    \"lockdown_info\": null,\n    \"door_info\": {\n      \"acu_name\": \"Lobby Door Controller\",\n      \"acu_id\": \"8adf16e0-a52a-45d1-8b68-efc5d6fb64ba\",\n      \"name\": \"Front Door\"\n    }\n  }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4062,7 +4084,13 @@
 							"response": []
 						}
 					],
-					"id": "b4156da8-f134-4f72-a687-fa6b9ad71ae5"
+					"id": "b4156da8-f134-4f72-a687-fa6b9ad71ae5",
+					"description": "[https://apidocs.verkada.com/reference/access-events-webhooks](https://apidocs.verkada.com/reference/access-events-webhooks)"
+				},
+				{
+					"name": "Alarms Webhooks",
+					"item": [],
+					"id": "171b486b-4437-45f4-bdec-31f364c82e88"
 				},
 				{
 					"name": "LPR Webhook Object",
@@ -4076,7 +4104,31 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t// Sampe LPR Webhook Object\n\t\"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n\t\"webhook_type\": \"lpr\",\n\t\"created_at\": 1602725490,\n\t\"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n\t\"data\": \n\t{\n\t\t\"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n\t\t\"created\": 1602725484,\n\t\t\"license_plate_number\": \"7NCR867\", \n\t\t\"confidence\": 0.85\n\t}\n}",
+							"raw": "{\n\t// Sampe Webhook Object\n\t\"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n\t\"webhook_type\": \"lpr\",\n\t\"created_at\": 1602725490,\n\t\"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n\t\"data\": \n\t{\n\t\t\"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n\t\t\"created\": 1602725484,\n\t\t\"license_plate_number\": \"7NCR867\", \n\t\t\"confidence\": 0.85\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{your_webhook_listener}}",
+						"description": "[https://apidocs.verkada.com/reference/lpr](https://apidocs.verkada.com/reference/lpr)"
+					},
+					"response": []
+				},
+				{
+					"name": "LPR Webhook Object Copy",
+					"id": "1f399295-4ddd-4641-93e6-11a2c3117b48",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t// Sampe Webhook Object\n\t\"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n\t\"webhook_type\": \"lpr\",\n\t\"created_at\": 1602725490,\n\t\"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n\t\"data\": \n\t{\n\t\t\"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n\t\t\"created\": 1602725484,\n\t\t\"license_plate_number\": \"7NCR867\", \n\t\t\"confidence\": 0.85\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4100,7 +4152,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t// Sample Sensor Webhook Object\n\t\"org_id\": \"3c85f39b-0d3d-4288-9c7e-cdec0b5b4ac5\",\n\t\"webhook_type\": \"sensor_alert\",\n\t\"created_at\": 1641230332,\n\t\"webhook_id\": \"bafdfe28-abcc-478c-a5cc-b465e293bc43\",\n\t\"data\": {\n\t\t\"alert_event_id\": \"e006ef1c-e039-43e0-88f5-093b17ccc2dc\",\n\t\t\"start_time\": 1641230330.845883,\n\t\t\"end_time\": null,\n\t\t\"most_extreme_value\": 38.725012367437245,\n\t\t\"is_above_max_event\": true,\n\t\t\"threshold\": 35,\n\t\t\"reading\": \"calibrated_temperature\",\n\t\t\"device_id\": \"e637120c-09bb-4601-a8bf-dcf54d46aece\",\n\t\t\"device_name\": \"Lobby Sensor\",\n\t\t\"device_serial\": \"JQ9E-R9CG-RF6X\"\n\t}\n}",
+							"raw": "{\n\t// Sampe Webhook Object\n\t\"org_id\": \"3c85f39b-0d3d-4288-9c7e-cdec0b5b4ac5\",\n\t\"webhook_type\": \"sensor_alert\",\n\t\"created_at\": 1641230332,\n\t\"webhook_id\": \"bafdfe28-abcc-478c-a5cc-b465e293bc43\",\n\t\"data\": {\n\t\t\"alert_event_id\": \"e006ef1c-e039-43e0-88f5-093b17ccc2dc\",\n\t\t\"start_time\": 1641230330.845883,\n\t\t\"end_time\": null,\n\t\t\"most_extreme_value\": 38.725012367437245,\n\t\t\"is_above_max_event\": true,\n\t\t\"threshold\": 35,\n\t\t\"reading\": \"calibrated_temperature\",\n\t\t\"device_id\": \"e637120c-09bb-4601-a8bf-dcf54d46aece\",\n\t\t\"device_name\": \"Lobby Sensor\",\n\t\t\"device_serial\": \"JQ9E-R9CG-RF6X\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
