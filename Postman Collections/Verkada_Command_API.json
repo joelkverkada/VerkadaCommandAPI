@@ -4044,18 +4044,19 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n  \"webhook_type\": \"lpr\",\n  \"created_at\": 1602725490,\n  \"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n  \"data\": \n  \t{\n      \"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n      \"created\": 1602725484,\n      \"license_plate_number\": \"7NCR867\", \n      \"confidence\": 0.85\n    }\n}",
+							"raw": "{\n\t// Sampe LPR Webhook Object\n\t\"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n\t\"webhook_type\": \"lpr\",\n\t\"created_at\": 1602725490,\n\t\"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n\t\"data\": \n\t{\n\t\t\"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n\t\t\"created\": 1602725484,\n\t\t\"license_plate_number\": \"7NCR867\", \n\t\t\"confidence\": 0.85\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "https://webhook.site/60172813-75b9-4313-be3a-aac081b2135a"
+						"url": "{{your_webhook_listener}}",
+						"description": "[https://apidocs.verkada.com/reference/lpr](https://apidocs.verkada.com/reference/lpr)"
 					},
 					"response": []
 				},
@@ -4067,23 +4068,25 @@
 						"disabledSystemHeaders": {}
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"org_id\": \"3c85f39b-0d3d-4288-9c7e-cdec0b5b4ac5\",\n\t\"webhook_type\": \"sensor_alert\",\n\t\"created_at\": 1641230332,\n\t\"webhook_id\": \"bafdfe28-abcc-478c-a5cc-b465e293bc43\",\n\t\"data\": {\n\t\t\"alert_event_id\": \"e006ef1c-e039-43e0-88f5-093b17ccc2dc\",\n\t\t\"start_time\": 1641230330.845883,\n\t\t\"end_time\": null,\n\t\t\"most_extreme_value\": 38.725012367437245,\n\t\t\"is_above_max_event\": true,\n\t\t\"threshold\": 35,\n\t\t\"reading\": \"calibrated_temperature\",\n\t\t\"device_id\": \"e637120c-09bb-4601-a8bf-dcf54d46aece\",\n\t\t\"device_name\": \"Lobby Sensor\",\n\t\t\"device_serial\": \"JQ9E-R9CG-RF6X\"\n\t}\n}",
+							"raw": "{\n\t// Sample Sensor Webhook Object\n\t\"org_id\": \"3c85f39b-0d3d-4288-9c7e-cdec0b5b4ac5\",\n\t\"webhook_type\": \"sensor_alert\",\n\t\"created_at\": 1641230332,\n\t\"webhook_id\": \"bafdfe28-abcc-478c-a5cc-b465e293bc43\",\n\t\"data\": {\n\t\t\"alert_event_id\": \"e006ef1c-e039-43e0-88f5-093b17ccc2dc\",\n\t\t\"start_time\": 1641230330.845883,\n\t\t\"end_time\": null,\n\t\t\"most_extreme_value\": 38.725012367437245,\n\t\t\"is_above_max_event\": true,\n\t\t\"threshold\": 35,\n\t\t\"reading\": \"calibrated_temperature\",\n\t\t\"device_id\": \"e637120c-09bb-4601-a8bf-dcf54d46aece\",\n\t\t\"device_name\": \"Lobby Sensor\",\n\t\t\"device_serial\": \"JQ9E-R9CG-RF6X\"\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{your_webhook_listener}}"
+						"url": "{{your_webhook_listener}}",
+						"description": "[https://apidocs.verkada.com/reference/sensor-alerts-webhook-object](https://apidocs.verkada.com/reference/sensor-alerts-webhook-object)"
 					},
 					"response": []
 				}
 			],
-			"id": "7e01c501-a8fd-4267-ac2f-08eb106b0547"
+			"id": "7e01c501-a8fd-4267-ac2f-08eb106b0547",
+			"description": "Use these\n\n[https://apidocs.verkada.com/reference/webhook-models](https://apidocs.verkada.com/reference/webhook-models)"
 		}
 	]
 }
