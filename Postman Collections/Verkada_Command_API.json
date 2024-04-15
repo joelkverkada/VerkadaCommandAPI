@@ -4034,8 +4034,55 @@
 			"description": "Verkada Helix is Verkada's search and integration engine. Using Helix, customers can pull transactional data from a variety of on-premise or cloud-based systems into Verkada Command. Helix then uses that data to index video footage by whatever attributes the customer needs. Finally, Helix provides flexible search tools to find just the right video.\n\n[https://apidocs.verkada.com/reference/overview-1](https://apidocs.verkada.com/reference/overview-1)"
 		},
 		{
-			"name": "New Folder",
-			"item": [],
+			"name": "Webhook Models",
+			"item": [
+				{
+					"name": "LPR Webhook Object",
+					"id": "c03c84d5-2d8f-4029-b038-435effbc335a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n  \"webhook_type\": \"lpr\",\n  \"created_at\": 1602725490,\n  \"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n  \"data\": \n  \t{\n      \"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n      \"created\": 1602725484,\n      \"license_plate_number\": \"7NCR867\", \n      \"confidence\": 0.85\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://webhook.site/60172813-75b9-4313-be3a-aac081b2135a"
+					},
+					"response": []
+				},
+				{
+					"name": "Sensors Alerts Webhook Object",
+					"id": "74a957ea-9189-4301-983a-f3e0e7d19090",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n  \"webhook_type\": \"lpr\",\n  \"created_at\": 1602725490,\n  \"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n  \"data\": \n  \t{\n      \"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n      \"created\": 1602725484,\n      \"license_plate_number\": \"7NCR867\", \n      \"confidence\": 0.85\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://webhook.site/60172813-75b9-4313-be3a-aac081b2135a"
+					},
+					"response": []
+				}
+			],
 			"id": "7e01c501-a8fd-4267-ac2f-08eb106b0547"
 		}
 	]
