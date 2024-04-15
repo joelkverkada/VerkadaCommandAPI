@@ -4089,11 +4089,60 @@
 				},
 				{
 					"name": "Alarms Webhooks",
-					"item": [],
+					"item": [
+						{
+							"name": "Alarm Site State Change",
+							"id": "1f399295-4ddd-4641-93e6-11a2c3117b48",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t// Sampe Webhook Object\n    \"org_id\": \"a96fec42-edee-4bb4-8457-a89b90d3d258\",\n    \"webhook_type\": \"alarm_site_state_changed\",\n    \"created_at\": 1685129790,\n    \"webhook_id\": \"aa01db73-34ac-4b29-a50a-e2b52191825c\",\n    \"data\": {\n        \"event_type\": \"resolved\",\n        \"timestamp\": 1685129786,\n        \"site_id\": \"f53e3b84-e534-4de5-821c-5263d96d3623\",\n        \"site_state\": \"disarmed\",\n        \"site_name\": \"Office 1st Floor\",\n        \"site_security_level\": \"custom\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{your_webhook_listener}}",
+								"description": "[https://apidocs.verkada.com/reference/lpr](https://apidocs.verkada.com/reference/lpr)"
+							},
+							"response": []
+						},
+						{
+							"name": "Alarm Event",
+							"id": "44915dc8-a471-4cb0-bdfa-2b958fe0e2ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true,
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // Sampe Webhook Object\n    \"org_id\": \"c926e7d6-be46-4ae8-9e24-11ad5a52fb42\",\n    \"webhook_type\": \"alarm_site_state_changed\",\n    \"created_at\": 1685129775,\n    \"webhook_id\": \"7c03289b-c80e-4766-ab58-e82c157c5990\",\n    \"data\": {\n        \"event_type\": \"alarm\",\n        \"timestamp\": 1685129774,\n        \"site_id\": \"f53e3b84-e534-4de5-821c-5263d96d3623\",\n        \"site_state\": \"alarm\",\n        \"site_name\": \"Office 1st Floor\",\n        \"site_security_level\": \"custom\",\n        \"device_name\": \"Reception Panic Button\",\n        \"device_id\": \"013ac542-3152-4477-9f85-f28007c9227e\",\n        \"device_event_type\": \"pressed\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{your_webhook_listener}}",
+								"description": "[https://apidocs.verkada.com/reference/lpr](https://apidocs.verkada.com/reference/lpr)"
+							},
+							"response": []
+						}
+					],
 					"id": "171b486b-4437-45f4-bdec-31f364c82e88"
 				},
 				{
-					"name": "LPR Webhook Object",
+					"name": "LPR Event",
 					"id": "c03c84d5-2d8f-4029-b038-435effbc335a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true,
@@ -4117,31 +4166,7 @@
 					"response": []
 				},
 				{
-					"name": "LPR Webhook Object Copy",
-					"id": "1f399295-4ddd-4641-93e6-11a2c3117b48",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true,
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t// Sampe Webhook Object\n\t\"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n\t\"webhook_type\": \"lpr\",\n\t\"created_at\": 1602725490,\n\t\"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n\t\"data\": \n\t{\n\t\t\"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n\t\t\"created\": 1602725484,\n\t\t\"license_plate_number\": \"7NCR867\", \n\t\t\"confidence\": 0.85\n\t}\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{your_webhook_listener}}",
-						"description": "[https://apidocs.verkada.com/reference/lpr](https://apidocs.verkada.com/reference/lpr)"
-					},
-					"response": []
-				},
-				{
-					"name": "Sensors Alerts Webhook Object",
+					"name": "Sensors Alert",
 					"id": "74a957ea-9189-4301-983a-f3e0e7d19090",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true,
