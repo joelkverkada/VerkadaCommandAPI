@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "1c442532-0983-4ae8-82b3-df4942f36041",
+		"_postman_id": "69b6611d-1a82-40f3-a096-a8e5ef4d3625",
 		"name": "Verkada Command API",
-		"description": "[https://apidocs.verkada.com/reference/introduction](https://apidocs.verkada.com/reference/introduction)",
+		"description": "For Verkada's full API documentation see [https://apidocs.verkada.com/reference/introduction](https://apidocs.verkada.com/reference/introduction)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -14,7 +14,7 @@
 					"item": [
 						{
 							"name": "Get Alerts",
-							"id": "bd3e06d5-b04a-4523-baa3-1ef11a2e4c60",
+							"id": "72fa274c-4d5d-4b4b-ad43-29ca39bccad5",
 							"protocolProfileBehavior": {
 								"disabledSystemHeaders": {
 									"accept": true
@@ -93,14 +93,14 @@
 							"response": []
 						}
 					],
-					"id": "a46bce79-4292-4d99-8da8-48676cb811e0"
+					"id": "53931a5f-df7b-430d-b5c9-d188b7ec5df8"
 				},
 				{
 					"name": "LPR",
 					"item": [
 						{
 							"name": "Get seen license plates",
-							"id": "e785a909-c18d-433e-8266-528865912355",
+							"id": "04747c1b-6ef0-43ee-99e6-fb4544cd42b6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -176,7 +176,7 @@
 						},
 						{
 							"name": "Get Timestamps for a License Plate",
-							"id": "7ed0ea93-43cb-40f9-be64-650b87e50574",
+							"id": "4112ed8f-34f4-4e12-b87a-947a2474c3d6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -249,7 +249,7 @@
 						},
 						{
 							"name": "Get All License Plates of Interest",
-							"id": "1b01bbe0-afa3-436f-ac9f-e628a29b1ca5",
+							"id": "aa43d0ba-d2b4-42e1-a863-6a0cf0c1ab22",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -302,7 +302,7 @@
 						},
 						{
 							"name": "Delete a License Plate of Interest",
-							"id": "b2cbfa46-66ed-441c-b2fd-2da94721c2ce",
+							"id": "5efda6c5-350f-46e1-ac07-c75bb8138396",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -348,7 +348,7 @@
 						},
 						{
 							"name": "Update a License of Interest",
-							"id": "91a0b08a-4b4a-4eb3-a5b3-0b32b72250be",
+							"id": "34b7bc45-8db2-41ec-9a3e-6fdbb8fdc96b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -403,7 +403,7 @@
 						},
 						{
 							"name": "Create a License Plate of Interest",
-							"id": "cc839491-82b9-41f2-bafc-476006a386fe",
+							"id": "16639fc5-d462-4c64-9b53-69498540051c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -423,7 +423,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"description\": \"\",\n  \"license_plate\": \"\"\n}",
+									"raw": "{\n  \"description\": \"123abc\",\n  \"license_plate\": \"plate desc\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -435,15 +435,14 @@
 							"response": []
 						}
 					],
-					"id": "a981abbe-cab5-4543-b031-5ad3fea5422d",
-					"description": "License Plate Recognition"
+					"id": "a5353cc6-fcd1-468b-8ca5-af73fc9fd140"
 				},
 				{
 					"name": "Analytics",
 					"item": [
 						{
 							"name": "Get Max People/Vehicle Counts",
-							"id": "e3a8feea-c5e6-4ebe-8321-b92d8d39115d",
+							"id": "fb0d5cd1-11a5-4d5b-b8f0-742ff6bbc8d1",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -504,7 +503,7 @@
 						},
 						{
 							"name": "Set Object Position MQTT Config",
-							"id": "807a750a-542a-4ffb-8da4-b99f0d35cb15",
+							"id": "ff309173-11d8-4907-ab6b-aad4b1296cdf",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -538,7 +537,7 @@
 						},
 						{
 							"name": "Get People/Vehicle Counts",
-							"id": "95daaa04-d907-4d1a-865e-20a3122a24f3",
+							"id": "371dec27-14a5-4489-abb5-5eb32b13616d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -608,7 +607,7 @@
 						},
 						{
 							"name": "Get Occupancy Trend Data",
-							"id": "b497db3e-645b-4e7c-ac07-0e08c32cc700",
+							"id": "239e61e9-2093-47a4-89ab-361d32c98a73",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -677,14 +676,14 @@
 							"response": []
 						}
 					],
-					"id": "1f44a13c-37f1-4aec-bee2-840f4f28aae4"
+					"id": "7fe752d5-e873-46f6-bdb3-d49805c53834"
 				},
 				{
 					"name": "CloudBackup",
 					"item": [
 						{
 							"name": "Get cloud backup settings for a certain camera",
-							"id": "3588694a-d31d-48bc-9340-cb3ba80b4c09",
+							"id": "b4f7975f-6ee0-441b-bb49-d7037fd17902",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -730,7 +729,7 @@
 						},
 						{
 							"name": "Update cloud backup settings for a certain camera",
-							"id": "98d665e4-f620-4a29-9d7d-65abaaddf421",
+							"id": "ec062220-5cad-4be9-a92a-e9f564c94ae1",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -763,14 +762,14 @@
 							"response": []
 						}
 					],
-					"id": "282ec475-4c11-4183-af90-d0b460f39336"
+					"id": "b318100b-3cd2-481e-8d3d-b1c126202011"
 				},
 				{
 					"name": "Devices",
 					"item": [
 						{
 							"name": "Get Camera Data",
-							"id": "b76c5b8b-a47b-4186-ba57-325d5f2ed06f",
+							"id": "b98e7a70-d730-42e6-9aaf-d58fb4c1b11d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -794,14 +793,14 @@
 							"response": []
 						}
 					],
-					"id": "e12b95b8-e86d-49d4-8468-f59867f85421"
+					"id": "45ee190d-ad23-4395-8cb4-576c40d2c5ae"
 				},
 				{
 					"name": "Footage",
 					"item": [
 						{
 							"name": "Get Link to Footage",
-							"id": "93907237-4f51-49d2-a0fa-622ea76b9e82",
+							"id": "423eb042-fe6c-4ba6-8f02-0f11aa8bbe18",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -852,7 +851,7 @@
 						},
 						{
 							"name": "Get Thumbnail Image",
-							"id": "202b60f9-63cf-4058-beaa-5f85eabcb6a9",
+							"id": "b80049c3-e2fa-4635-aa2f-c77eaacb3812",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -910,7 +909,7 @@
 						},
 						{
 							"name": "Get Thumbnail Link",
-							"id": "943b0e87-788a-4933-862b-d60119e7cbe4",
+							"id": "db6a5582-bf19-4ed0-8e1a-b1c31ea11ace",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -969,7 +968,7 @@
 						},
 						{
 							"name": "Get Streaming Token",
-							"id": "20e59de8-632d-4384-bbab-0cd0818f0a87",
+							"id": "a0ccabd7-3891-4530-ab92-ec2c36a58b51",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1015,7 +1014,7 @@
 						},
 						{
 							"name": "Stream Footage (Live or Historical)",
-							"id": "90f01c3b-9876-4643-bf75-9d7400d1230b",
+							"id": "1204971e-c2b7-45f7-9403-54920a80c98b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1098,7 +1097,7 @@
 						},
 						{
 							"name": "Get Latest Thumbnail Image",
-							"id": "12fd66e0-b1e2-4c52-b0b2-0ab8091802cc",
+							"id": "13bad0a0-6283-42dd-a6cb-e36d9a5c6693",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1149,14 +1148,14 @@
 							"response": []
 						}
 					],
-					"id": "f37d7167-f907-46f6-a0f9-7be900ca41a5"
+					"id": "79c36069-3d9c-456a-81aa-8fced0dca7fc"
 				},
 				{
 					"name": "People",
 					"item": [
 						{
 							"name": "Get All Person of Interest",
-							"id": "a97e46d2-dfee-4727-b200-e36da6c4e294",
+							"id": "41ac4127-d110-4e82-ba1b-756d645d33cd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1209,7 +1208,7 @@
 						},
 						{
 							"name": "Create a Person of Interest",
-							"id": "be9e7429-daf5-4cc0-a565-28118fbb8d70",
+							"id": "d248cbde-3791-454b-944a-7fab4fd28202",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1243,7 +1242,7 @@
 						},
 						{
 							"name": "Update a Person of Interest",
-							"id": "72a0d9dd-3bdc-4cd4-b521-882b3111b1c6",
+							"id": "58ce7c52-6a22-4972-9f09-18b550148b68",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1297,7 +1296,7 @@
 						},
 						{
 							"name": "Delete a Person of Interest",
-							"id": "9dd53e88-eb7b-4644-8ecd-a774b79894d7",
+							"id": "3e1e311b-e6e8-490e-a2b8-ebf260353c16",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1341,10 +1340,10 @@
 							"response": []
 						}
 					],
-					"id": "c5e5fc84-a087-48e7-8bfd-48c160240428"
+					"id": "c1f20ba4-f345-496d-927e-4d393e123f1f"
 				}
 			],
-			"id": "2b27f9e8-4d2b-4d78-9653-5bb96a2fd218"
+			"id": "134dddd1-cb27-42e8-b5df-457eade40b18"
 		},
 		{
 			"name": "Core API",
@@ -1354,7 +1353,7 @@
 					"item": [
 						{
 							"name": "Get Audit Logs",
-							"id": "344d43bf-1a97-44ee-a17a-e641383a7b37",
+							"id": "8eeeea80-4cb7-42fd-8020-6bffc1cd6627",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1417,14 +1416,14 @@
 							"response": []
 						}
 					],
-					"id": "dcc8a2f9-f249-4ee8-ae51-29aac04be38e"
+					"id": "c6b94d3b-4157-42fa-8a50-d06dc90eca2a"
 				},
 				{
 					"name": "Users",
 					"item": [
 						{
 							"name": "Get User",
-							"id": "1fd21901-36ff-447b-85c7-2a82a08fd850",
+							"id": "b180f641-625d-46c5-88cb-e23fc39ee361",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1474,7 +1473,7 @@
 						},
 						{
 							"name": "Delete User",
-							"id": "ad940f6d-c97d-40d0-a03a-0ff67470eba3",
+							"id": "3437c8f5-3cc8-42a0-b05a-a382a68a997a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1525,7 +1524,7 @@
 						},
 						{
 							"name": "Update User",
-							"id": "771f53f4-2df1-47e9-a53e-4e242806baeb",
+							"id": "1c7651c8-203d-49c3-93b9-0e81a51e48f3",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1585,7 +1584,7 @@
 						},
 						{
 							"name": "Create User",
-							"id": "a203ad66-9d92-4f6a-845c-bcdd078084d8",
+							"id": "58b38601-b79f-46e2-80f4-0f82c7e046d0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1618,11 +1617,11 @@
 							"response": []
 						}
 					],
-					"id": "22aaf2bd-2e79-44df-b599-a8a75cb96613",
+					"id": "549658f5-0047-4a00-b551-b32a9eca7cdb",
 					"description": "[https://apidocs.verkada.com/reference/external-id-introduction](https://apidocs.verkada.com/reference/external-id-introduction)\n\n[https://apidocs.verkada.com/reference/command-user-object](https://apidocs.verkada.com/reference/command-user-object)"
 				}
 			],
-			"id": "28f770b7-2a46-4904-966b-ab5fc43b5546"
+			"id": "eb3bf369-1ed7-4857-a3b0-37575ad43e85"
 		},
 		{
 			"name": "Access API",
@@ -1632,7 +1631,7 @@
 					"item": [
 						{
 							"name": "Get All Access Groups",
-							"id": "27205799-c8c9-4833-83fe-ccc854c57188",
+							"id": "d85e3fd8-0f95-41f7-81d0-754c3162d5af",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1657,7 +1656,7 @@
 						},
 						{
 							"name": "Get Access Group",
-							"id": "cbc22ef6-5e29-4aeb-a03f-abff573c64a6",
+							"id": "9464abb5-29ec-4bbd-86a3-86414668cb76",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1702,7 +1701,7 @@
 						},
 						{
 							"name": "Delete Access Group",
-							"id": "d0b820a0-4f47-4bd7-a7a5-8545a79edd8d",
+							"id": "bc68eb6f-357b-479d-a3ad-259b0ae10b02",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1747,7 +1746,7 @@
 						},
 						{
 							"name": "Create Access Group",
-							"id": "37431e22-4c24-4b5d-ae9f-0c3be771819f",
+							"id": "6e952df8-7bac-434b-9b7e-7deaad6653db",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1781,7 +1780,7 @@
 						},
 						{
 							"name": "Remove User from Access Group",
-							"id": "9d4a8d39-c271-4023-87ce-b6d54150c023",
+							"id": "c3b31c33-fbff-4130-84e4-41d9e761bb71",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1839,7 +1838,7 @@
 						},
 						{
 							"name": "Add User to Access Group",
-							"id": "17d313a7-2652-4177-b61b-f43caa357fab",
+							"id": "3eb9395d-c2c9-4f70-b3cd-4f00b0367ef5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1900,14 +1899,14 @@
 							"response": []
 						}
 					],
-					"id": "70adf857-508b-412c-8b99-84b2001de0eb"
+					"id": "2b7e479a-f067-49f3-9619-97f121597de7"
 				},
 				{
 					"name": "Access User Information",
 					"item": [
 						{
 							"name": "Get All Access Users",
-							"id": "d4f9c7d3-2944-4064-a7e0-43848278d847",
+							"id": "0b0d76cd-731d-4b41-a7b2-76dc469e1378",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1932,7 +1931,7 @@
 						},
 						{
 							"name": "Get Access Information Object",
-							"id": "5791289c-fb81-4509-be1c-f4b45b61db24",
+							"id": "7bf7ea91-ab42-4013-9bae-1d7e58d73bfa",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1984,7 +1983,7 @@
 						},
 						{
 							"name": "Send Pass App Invite for User",
-							"id": "516a6c3a-0ee3-4266-b09b-9d08f35b99fa",
+							"id": "e87a9d66-dfa3-4abb-b6d6-f5673a51e9dd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2038,7 +2037,7 @@
 						},
 						{
 							"name": "Set End Date for User",
-							"id": "d387f8d4-8363-4ead-9428-fb57dac66344",
+							"id": "72f745c9-22e6-4090-aefa-4be144c215d7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2100,7 +2099,7 @@
 						},
 						{
 							"name": "Set Start Date for User",
-							"id": "a5c3279c-0444-40c2-9d14-d8820d9f2858",
+							"id": "6ecd0625-786f-445a-b31e-26c34b901dae",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2162,7 +2161,7 @@
 						},
 						{
 							"name": "Remove Entry Code for User",
-							"id": "6e08cdf3-1f69-4ead-b20a-2b561e814211",
+							"id": "58c94f47-4f53-4ea5-a2bb-9dcfc9c4e7bb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2215,7 +2214,7 @@
 						},
 						{
 							"name": "Set Entry Code for User",
-							"id": "445c48aa-1f5e-4300-b528-6d7097d8517f",
+							"id": "7dedd35c-be3d-4ab8-b8f4-8a7c1e26e46a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2283,7 +2282,7 @@
 						},
 						{
 							"name": "Activate BLE for Access User",
-							"id": "0798ef09-39af-428f-827d-35b9ba76785b",
+							"id": "6bce6054-516b-45af-bd7a-22734648f248",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2337,7 +2336,7 @@
 						},
 						{
 							"name": "Activate Remote Unlock for User",
-							"id": "21b97a05-40d6-42d2-be3c-9722c7e258c2",
+							"id": "2fa6046b-09eb-4e42-9bc1-e5101f615e5c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2391,7 +2390,7 @@
 						},
 						{
 							"name": "Deactivate Remote Unlock for User",
-							"id": "2c850df6-d87d-4a3e-b5a0-396dea7756cb",
+							"id": "a33ade76-966c-4599-9812-9cd3baff2869",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2445,7 +2444,7 @@
 						},
 						{
 							"name": "Deactivate BLE for Access User",
-							"id": "0db7ae3c-6e7c-4fb1-a3e1-6370ec7fb413",
+							"id": "d1611a63-3900-471a-a5f0-a5f3159e7248",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2498,14 +2497,14 @@
 							"response": []
 						}
 					],
-					"id": "8d1996a5-9a6c-4ff6-b78c-882056ff77b0"
+					"id": "860de524-c8d4-4da9-bfe2-731eaddd66ca"
 				},
 				{
 					"name": "Access Credentials",
 					"item": [
 						{
 							"name": "Delete Access Card",
-							"id": "9651f908-5dae-44d2-9e36-cc4a6ece8eef",
+							"id": "6bb15483-9c3c-4a65-a167-5e3f803a83f0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2562,7 +2561,7 @@
 						},
 						{
 							"name": "Activate Access Card",
-							"id": "6607b051-4aa4-47f7-9bf9-e4d50f00358f",
+							"id": "4087b44a-0b74-498e-b529-4add4bf7e5c8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2620,7 +2619,7 @@
 						},
 						{
 							"name": "Deactivate Access Card",
-							"id": "e69b8e2b-3e6b-4e28-bef2-16442eae07e9",
+							"id": "1e2062cb-435d-4e5c-9031-68923563f69e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2678,7 +2677,7 @@
 						},
 						{
 							"name": "Deactivate License Plate",
-							"id": "e00ee47b-4bc0-4b26-813f-5134dd8be22f",
+							"id": "214a96a2-1810-40b1-a472-1bfcc6cabb11",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2736,7 +2735,7 @@
 						},
 						{
 							"name": "Delete License Plate from User",
-							"id": "3aa63e86-de6c-443c-975f-f1d72ff612f3",
+							"id": "7f491be8-312a-44c9-85a9-65e74aa9f5fb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2793,7 +2792,7 @@
 						},
 						{
 							"name": "Activate License Plate",
-							"id": "9f0146e9-58e2-4f9a-aa78-221055243f7c",
+							"id": "f5500d8b-1dfb-4dc7-85f8-6901762a1bf9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2851,7 +2850,7 @@
 						},
 						{
 							"name": "Add Card to User",
-							"id": "bb50a42f-b4ab-451e-b48b-365a6699c7e3",
+							"id": "6c9e6c3f-656b-494b-b7d2-c4aec1c46aea",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2912,7 +2911,7 @@
 						},
 						{
 							"name": "Add License Plate to User",
-							"id": "a67c907b-692b-416d-b363-85ee9c3a64de",
+							"id": "61cb41e8-a457-475d-a46f-962eabe54d40",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2972,14 +2971,14 @@
 							"response": []
 						}
 					],
-					"id": "9d69becc-5773-4f0a-8a7a-62aab7937a83"
+					"id": "b22be8e3-3450-4104-9d6e-bf53bec56a38"
 				},
 				{
 					"name": "Access Doors",
 					"item": [
 						{
 							"name": "Get Doors",
-							"id": "48bad5f4-e089-4266-8adf-1e9c45c668ec",
+							"id": "88bdaa1c-061e-49ad-8b6e-0ab2667d3f49",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3031,7 +3030,7 @@
 						},
 						{
 							"name": "User Door Unlock",
-							"id": "e0d5d672-70e7-44a1-9b29-5f45f1a353e3",
+							"id": "91f4b8df-0394-466d-921e-301e8b6be3fb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3065,7 +3064,7 @@
 						},
 						{
 							"name": "Admin Door Unlock",
-							"id": "d828d123-7d07-475b-b01e-aef71e9279ff",
+							"id": "4166b72b-3a82-4346-835d-d16b502c78c0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3098,10 +3097,10 @@
 							"response": []
 						}
 					],
-					"id": "27d4d8c3-d8fa-4096-9574-9a676dbe70de"
+					"id": "43c4a99f-59d0-41af-8cf7-6a06b4e3c983"
 				}
 			],
-			"id": "2bf5dd55-86a9-47f2-b1aa-356e7d512f1b",
+			"id": "8fa17889-a008-4e45-a586-311136dc4f9e",
 			"description": "[https://apidocs.verkada.com/reference/access-user-guide](https://apidocs.verkada.com/reference/access-user-guide)"
 		},
 		{
@@ -3112,7 +3111,7 @@
 					"item": [
 						{
 							"name": "Get Sensor Alerts",
-							"id": "2fdc2d72-f842-4795-8e7f-b49116b28495",
+							"id": "8127c531-6f07-4a7e-856d-870cb4af6b75",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3186,14 +3185,14 @@
 							"response": []
 						}
 					],
-					"id": "a521b459-3c77-424a-9feb-954b42511af8"
+					"id": "4b59fc81-3d40-493a-a512-c095987e299f"
 				},
 				{
 					"name": "Data",
 					"item": [
 						{
 							"name": "Get Sensor Data",
-							"id": "64571e8b-d715-4fc9-9d84-7dd2e3342d3d",
+							"id": "38ce371d-fffb-42c7-9312-10131df8cf31",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3212,7 +3211,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{region}}.verkada.com/environment/v1/data?device_ids=",
+									"raw": "https://{{region}}.verkada.com/environment/v1/data?device_id=",
 									"protocol": "https",
 									"host": [
 										"{{region}}",
@@ -3226,7 +3225,7 @@
 									],
 									"query": [
 										{
-											"key": "device_ids",
+											"key": "device_id",
 											"value": "",
 											"description": "** REQUIRED ** A comma separated list of sensor IDs."
 										},
@@ -3267,10 +3266,10 @@
 							"response": []
 						}
 					],
-					"id": "871170fe-8754-428b-a24f-1c8328364090"
+					"id": "09bd52a3-495c-4f3d-981e-fb9faa2bf0ba"
 				}
 			],
-			"id": "b71dee00-e248-4ac1-a2e8-678cb11d32ae"
+			"id": "bdedd8a5-c540-458a-9297-aa85578224c4"
 		},
 		{
 			"name": "Guest API",
@@ -3280,7 +3279,7 @@
 					"item": [
 						{
 							"name": "Get Guest Sites",
-							"id": "1af64180-26e6-4d5d-9583-84f6771c87ce",
+							"id": "539a8e9c-77df-49da-b6f0-3a755ca1c5f4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3304,14 +3303,14 @@
 							"response": []
 						}
 					],
-					"id": "bf9e4c7f-ca1a-4eec-b5a5-0d978221e499"
+					"id": "333554b8-f708-4400-b0ba-59462b5b0718"
 				},
 				{
 					"name": "Visits",
 					"item": [
 						{
 							"name": "Get Guest Visits",
-							"id": "d02f0f32-bf50-447f-8bab-d9137c54e3f3",
+							"id": "66db5eb0-acba-4880-8b7b-338330343c97",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3377,10 +3376,10 @@
 							"response": []
 						}
 					],
-					"id": "3bfd0cf2-20be-4f57-bea7-1a6ee1a14bbf"
+					"id": "ec6d636a-d1aa-4a35-b225-cb72580a03f1"
 				}
 			],
-			"id": "bcf9c671-d060-44b6-8a35-4d40b4ffc58f"
+			"id": "03892534-9641-4034-a2e5-acc98db75bdc"
 		},
 		{
 			"name": "Alarm API",
@@ -3390,7 +3389,7 @@
 					"item": [
 						{
 							"name": "Get Site Information",
-							"id": "16dea6b9-ec91-441e-ada1-bbbb078a4ed8",
+							"id": "89b18257-fc36-4033-ad7e-026dd7b56afd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3435,14 +3434,14 @@
 							"response": []
 						}
 					],
-					"id": "142a3f11-727d-47c3-97b1-7371d69bda97"
+					"id": "11269624-c327-419c-912c-9d9d3afa1dbd"
 				},
 				{
 					"name": "Devices",
 					"item": [
 						{
 							"name": "Get Alarm Devices",
-							"id": "457f31d9-8441-491a-aa64-feab983e13eb",
+							"id": "409e7e03-af4f-47e9-9135-427deca665db",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3492,17 +3491,17 @@
 							"response": []
 						}
 					],
-					"id": "0c766945-d1fb-45fa-81cb-fe9bdd130182"
+					"id": "10e9ca7f-c473-443a-82f1-391e4ebfc82c"
 				}
 			],
-			"id": "8a487c23-a7e9-4ad7-b3f6-5a604e7335b1"
+			"id": "b1056a28-df4e-4bc8-829a-fa639836847a"
 		},
 		{
 			"name": "Events API",
 			"item": [
 				{
 					"name": "Get Events",
-					"id": "0f809359-adad-4e5e-b5fd-1677944bbf2a",
+					"id": "29f0962e-a443-4823-ad12-6e52eafcac06",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3589,14 +3588,14 @@
 					"response": []
 				}
 			],
-			"id": "4c52a981-b944-4c4e-930d-c5407c269d6a"
+			"id": "5837aac3-9778-4cc5-b9cb-32a24ffe1b81"
 		},
 		{
 			"name": "Viewing Station API",
 			"item": [
 				{
 					"name": "Get Viewing Station Devices",
-					"id": "61acc586-e69a-4896-8baa-e28670498448",
+					"id": "8f97ff5f-f7fb-4cfd-8f4e-fb46e71453c1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3620,12 +3619,419 @@
 					"response": []
 				}
 			],
-			"id": "e394d257-96f4-4cd2-8057-fcdd412487b8"
+			"id": "4506d384-6fb5-4b17-8bfd-39d7979bbb4b"
 		},
 		{
 			"name": "Verkada Helix API",
-			"item": [],
-			"id": "3643f2a4-a90a-4a24-b45f-1c8760ee4a0b"
+			"item": [
+				{
+					"name": "Create a Helix Event",
+					"id": "d5ddea9a-d5e5-44db-8c02-79bc55f3650d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  // ** REQUIRED ** List of event attributes.\n  \"attributes\": {\n    \"field1\": \"this is a string\",\n    \"field2\": 123,\n    \"field3\": 123.456,\n    \"field4\": true\n  },\n  \n  // Whether or not an event is flagged.\n  \"flagged\": false,\n  \n  // ** REQUIRED ** The unique identifier of the camera.\n  \"camera_id\": \"[camera_id]]\",\n  \n  // ** REQUIRED ** The unique identifier of the event type.\n  \"event_type_uid\": \"[event_type_uid]\",\n  \n  // ** REQUIRED ** The event epoch time in milliseconds.\n  \"time_ms\": \n}\n"
+						},
+						"url": "https://api.verkada.com/cameras/v1/video_tagging/event",
+						"description": "[https://apidocs.verkada.com/reference/postvideotaggingeventviewv1](https://apidocs.verkada.com/reference/postvideotaggingeventviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Helix Events",
+					"id": "a52586d4-3d96-4c45-93f9-4587f7202556",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    //\"attribute_filters\": [ {\"field1\": \"New Value\"}]\n    \n    // Whether or not an event is flagged.\n    //\"flagged\": false,\n\n    // List of unique identifiers of cameras.  E.g. [\"cam_id1\",\"cam_id2\"]\n    //\"camera_ids\": [\"cam_id\"]\n\n    // The unique identifier of the event type.\n    //\"event_type_uid\": \"62623243-fc25-48f0-b78a-bcbf7a973f5d\"\n\n    //\"start_time_ms\": \n\n    // Query end epoch time in milliseconds.\n    //\"end_time_ms\": \n\n    // List of search keywords. E.g. [\"word1\",\"word2\"]\n    //\"keywords\": [\"\"]\n}\n"
+						},
+						"url": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event/search",
+						"description": "[https://apidocs.verkada.com/reference/postvideotaggingeventsearchviewv1](https://apidocs.verkada.com/reference/postvideotaggingeventsearchviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Helix Event",
+					"id": "704d1be4-f0a9-4ca3-9017-a95345b49aac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  // List of event attributes.\n  \"attributes\": {\n    \"field1\": \"this is a string value\",\n    \"field2\": 1234,\n    \"field3\": 123.4567,\n    \"field4\": false\n  },\n  // Whether or not an event is flagged. true/false\n  \"flagged\": false\n}\n"
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event?camera_id=&event_type_uid=&time_ms=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event"
+							],
+							"query": [
+								{
+									"key": "camera_id",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the camera."
+								},
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The event epoch time in milliseconds."
+								},
+								{
+									"key": "time_ms",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type."
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/patchvideotaggingeventviewv1](https://apidocs.verkada.com/reference/patchvideotaggingeventviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Helix Event Type",
+					"id": "4a85707e-61fd-4839-bf68-4c9320d866e5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  // The schema of the event type.\n  \"event_schema\": {\n    \"field2\": \"string\",\n    \"field1\": \"string\",\n    \"field3\": \"integer\",\n    \"field4\": \"float\",\n    \"field5\": \"boolean\"\n  },\n  // The name of the event type.\n  \"name\": \"Test123\"\n}"
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event_type?event_type_uid=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event_type"
+							],
+							"query": [
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type."
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/patchvideotaggingeventtypeviewv1](https://apidocs.verkada.com/reference/patchvideotaggingeventtypeviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Helix Event Type",
+					"id": "299619b0-85b1-49cd-8971-5cc4600109eb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  // The schema of the event type.\n  \"event_schema\": {\n    \"field1\": \"string\",\n    \"field2\": \"integer\",\n    \"field3\": \"float\",\n    \"field4\": \"boolean\"\n  },\n  // The name of the event type.\n  \"name\": \"[Event Type Name]\"\n}\n"
+						},
+						"url": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event_type",
+						"description": "[https://apidocs.verkada.com/reference/postvideotaggingeventtypeviewv1](https://apidocs.verkada.com/reference/postvideotaggingeventtypeviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Helix Event Type",
+					"id": "1971ecca-9229-4076-8885-7caaf18cae9f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event_type?event_type_uid=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event_type"
+							],
+							"query": [
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type."
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/deletevideotaggingeventtypeviewv1](https://apidocs.verkada.com/reference/deletevideotaggingeventtypeviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Helix Event",
+					"id": "461127fd-cb74-455a-88e8-e094cfb87b1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event?camera_id=&time_ms=&event_type_uid=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event"
+							],
+							"query": [
+								{
+									"key": "camera_id",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the camera."
+								},
+								{
+									"key": "time_ms",
+									"value": "",
+									"description": "** REQUIRED ** The event epoch time in milliseconds."
+								},
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type."
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/deletevideotaggingeventviewv1](https://apidocs.verkada.com/reference/deletevideotaggingeventviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Helix Event",
+					"id": "16a4ca27-b21f-4886-81d5-c0029688ba4b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event?camera_id=&time_ms=&event_type_uid=",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event"
+							],
+							"query": [
+								{
+									"key": "camera_id",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the camera."
+								},
+								{
+									"key": "time_ms",
+									"value": "",
+									"description": "** REQUIRED ** The event epoch time in milliseconds."
+								},
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type."
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/getvideotaggingeventviewv1](https://apidocs.verkada.com/reference/getvideotaggingeventviewv1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of Helix Event Types",
+					"id": "43271a58-cfff-4463-9859-5438aed2af46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{region}}.verkada.com/cameras/v1/video_tagging/event_type",
+							"protocol": "https",
+							"host": [
+								"{{region}}",
+								"verkada",
+								"com"
+							],
+							"path": [
+								"cameras",
+								"v1",
+								"video_tagging",
+								"event_type"
+							],
+							"query": [
+								{
+									"key": "event_type_uid",
+									"value": "",
+									"description": "** REQUIRED ** The unique identifier of the event type.",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "[https://apidocs.verkada.com/reference/getvideotaggingeventtypeviewv1](https://apidocs.verkada.com/reference/getvideotaggingeventtypeviewv1)"
+					},
+					"response": []
+				}
+			],
+			"id": "ba450788-0e76-4d73-b61f-380303aa203e",
+			"description": "Verkada Helix is Verkada's search and integration engine. Using Helix, customers can pull transactional data from a variety of on-premise or cloud-based systems into Verkada Command. Helix then uses that data to index video footage by whatever attributes the customer needs. Finally, Helix provides flexible search tools to find just the right video.\n\n[https://apidocs.verkada.com/reference/overview-1](https://apidocs.verkada.com/reference/overview-1)"
 		}
 	]
 }
