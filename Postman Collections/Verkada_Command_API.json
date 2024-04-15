@@ -4032,6 +4032,11 @@
 			],
 			"id": "ba450788-0e76-4d73-b61f-380303aa203e",
 			"description": "Verkada Helix is Verkada's search and integration engine. Using Helix, customers can pull transactional data from a variety of on-premise or cloud-based systems into Verkada Command. Helix then uses that data to index video footage by whatever attributes the customer needs. Finally, Helix provides flexible search tools to find just the right video.\n\n[https://apidocs.verkada.com/reference/overview-1](https://apidocs.verkada.com/reference/overview-1)"
+		},
+		{
+			"name": "New Folder",
+			"item": [],
+			"id": "7e01c501-a8fd-4267-ac2f-08eb106b0547"
 		}
 	]
 }
