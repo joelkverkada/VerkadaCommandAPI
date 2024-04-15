@@ -4071,14 +4071,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"org_id\": \"b9b576c4-ec47-4801-9720-4104d85147cb\",\n  \"webhook_type\": \"lpr\",\n  \"created_at\": 1602725490,\n  \"webhook_id\": \"0302934a-9966-4df6-a39c-d7e7e5467244\",\n  \"data\": \n  \t{\n      \"camera_id\": \"7a226fef-3636-4428-bb61-aa3e61c4abea\", \n      \"created\": 1602725484,\n      \"license_plate_number\": \"7NCR867\", \n      \"confidence\": 0.85\n    }\n}",
+							"raw": "{\n  \"org_id\": \"3c85f39b-0d3d-4288-9c7e-cdec0b5b4ac5\",\n  \"webhook_type\": \"sensor_alert\",\n  \"created_at\": 1641230332,\n  \"webhook_id\": \"bafdfe28-abcc-478c-a5cc-b465e293bc43\",\n  \"data\": {\n    \"alert_event_id\": \"e006ef1c-e039-43e0-88f5-093b17ccc2dc\",\n    \"start_time\": 1641230330.845883,\n    \"end_time\": null,\n    \"most_extreme_value\": 38.725012367437245,\n    \"is_above_max_event\": true,\n    \"threshold\": 35,\n    \"reading\": \"calibrated_temperature\",\n    \"device_id\": \"e637120c-09bb-4601-a8bf-dcf54d46aece\",\n    \"device_name\": \"Lobby Sensor\",\n    \"device_serial\": \"JQ9E-R9CG-RF6X\"\n  }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "https://webhook.site/60172813-75b9-4313-be3a-aac081b2135a"
+						"url": "{{your_webhook_listener}}"
 					},
 					"response": []
 				}
