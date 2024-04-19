@@ -3084,14 +3084,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    // The unique identifier of the user managed by Verkada.\n    \"user_id\": \"\"\n    // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\"\n}",
+									"raw": "{\n    // The unique identifier of the user managed by Verkada.\n    \"user_id\": \"\",\n    \"door\": \"\"\n    // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "https://{{region}}.verkada.com/access/v1/door/{{door_id}}/admin_unlock",
+								"url": "https://{{region}}.verkada.com/access/v1/door/admin_unlock",
 								"description": "TBD"
 							},
 							"response": []
