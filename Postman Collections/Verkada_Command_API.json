@@ -3057,7 +3057,7 @@
 										}
 									}
 								},
-								"url": "https://{{region}}.verkada.com/access/v1/door/{{door_id}}/user_unlock",
+								"url": "https://{{region}}.verkada.com/access/v1/door/user_unlock",
 								"description": "TBD"
 							},
 							"response": []
