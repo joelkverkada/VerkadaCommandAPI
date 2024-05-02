@@ -3644,7 +3644,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{\n  // ** REQUIRED ** List of event attributes.\n  \"attributes\": {\n    \"field1\": \"this is a string\",\n    \"field2\": 123,\n    \"field3\": 123.456,\n    \"field4\": true\n  },\n  \n  // Whether or not an event is flagged.\n  \"flagged\": false,\n  \n  // ** REQUIRED ** The unique identifier of the camera.\n  \"camera_id\": \"[camera_id]]\",\n  \n  // ** REQUIRED ** The unique identifier of the event type.\n  \"event_type_uid\": \"[event_type_uid]\",\n  \n  // ** REQUIRED ** The event epoch time in milliseconds.\n  \"time_ms\": \n}\n"
+							"raw": "\n{\n  // ** REQUIRED ** List of event attributes.\n  \"attributes\": {\n    \"field1\": \"this is a string\",\n    \"field2\": 123,\n    \"field3\": 123.456,\n    \"field4\": true\n  },\n  \n  // Whether or not an event is flagged.\n  \"flagged\": false,\n  \n  // ** REQUIRED ** The unique identifier of the camera.\n  \"camera_id\": \"[camera_id]\",\n  \n  // ** REQUIRED ** The unique identifier of the event type.\n  \"event_type_uid\": \"[event_type_uid]\",\n  \n  // ** REQUIRED ** The event epoch time in milliseconds.\n  \"time_ms\": \n}\n"
 						},
 						"url": "https://api.verkada.com/cameras/v1/video_tagging/event",
 						"description": "[https://apidocs.verkada.com/reference/postvideotaggingeventviewv1](https://apidocs.verkada.com/reference/postvideotaggingeventviewv1)"
