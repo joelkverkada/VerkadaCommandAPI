@@ -2987,13 +2987,11 @@
 								"header": [
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									},
 									{
 										"key": "accept",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									}
 								],
 								"url": {
@@ -3011,13 +3009,13 @@
 									],
 									"query": [
 										{
-											"key": "door_id",
+											"key": "site_ids",
 											"value": "",
 											"description": "A list of Verkada site_ids to control which doors are returned.",
 											"disabled": true
 										},
 										{
-											"key": "site_ids",
+											"key": "door_ids",
 											"value": "",
 											"description": "A list of Verkada door_ids to control which doors are returned.",
 											"disabled": true
