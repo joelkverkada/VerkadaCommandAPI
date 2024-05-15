@@ -412,18 +412,16 @@
 								"header": [
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									},
 									{
 										"key": "accept",
-										"value": "application/json",
-										"type": "text"
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"description\": \"123abc\",\n  \"license_plate\": \"plate desc\"\n}",
+									"raw": "{\n  \"description\": \"plate description\",\n  \"license_plate\": \"123abc\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
