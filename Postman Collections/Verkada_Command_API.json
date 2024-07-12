@@ -1409,34 +1409,16 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/audio/status?camera_id&enabled",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"audio",
-										"status"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": null,
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										},
-										{
-											"key": "enabled",
-											"value": null,
-											"description": "** REQUIRED ** The status of audio for the camera. If value is True, audio is turned on for the camera.",
-											"type": "text"
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"camera_id\": \"\",\n    \"enabled\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/audio/status",
 								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys). This doesn't work if Camera Audio is globally disabled (visit [Feature Manager](https://help.verkada.com/en/articles/6937133-feature-manager)) or if audio is not supported by the camera model.\n\n[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
 							},
 							"response": []
