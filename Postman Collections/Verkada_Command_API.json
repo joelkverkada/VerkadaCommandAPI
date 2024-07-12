@@ -1385,7 +1385,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
+								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys).\n\n[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
 							},
 							"response": []
 						},
@@ -1437,13 +1437,12 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
+								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys). This doesn't work if Camera Audio is globally disabled (visit [Feature Manager](https://help.verkada.com/en/articles/6937133-feature-manager)) or if audio is not supported by the camera model.\n\n[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
 							},
 							"response": []
 						}
 					],
-					"id": "3a85da68-dbff-409a-83ac-a394e64b8c7a",
-					"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys)."
+					"id": "3a85da68-dbff-409a-83ac-a394e64b8c7a"
 				}
 			],
 			"id": "134dddd1-cb27-42e8-b5df-457eade40b18"
