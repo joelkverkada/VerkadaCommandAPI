@@ -1363,8 +1363,81 @@
 										"type": "text"
 									}
 								],
-								"url": "https://{{region}}.verkada.com/cameras/v1/audio/status",
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/audio/status?camera_id",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"audio",
+										"status"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										}
+									]
+								},
 								"description": "[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Camera Audio Status",
+							"id": "b6d3c957-2787-4715-8216-9b95229210fd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/audio/status?camera_id&enabled",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"audio",
+										"status"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "enabled",
+											"value": null,
+											"description": "** REQUIRED ** The status of audio for the camera. If value is True, audio is turned on for the camera.",
+											"type": "text"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
 							},
 							"response": []
 						}
