@@ -3340,6 +3340,13 @@
 											"value": "",
 											"description": "Retrieves alerts only for the given fields.  Fields must be one or multiple comma separated values from humidity, motion, noise_level, pm_2_5, pm_4_0, pm_1_0_0, tamper, temperature, tvoc(SV11), usa_air_quality_index, vape_index, carbon_dioxide, carbon_monoxide, barometric_pressure, formaldehyde, ambient_light, tvoc_index(SV23/SV25).  If left blank, alerts of all sensor types will be returned in the response.",
 											"disabled": true
+										},
+										{
+											"key": "interval",
+											"value": null,
+											"description": "The time interval for the requested sensor data. Data is stored with 1 second intervals for 30 days, and with 5 minute intervals for data between 30 days and 365 days old. A valid value for this field is a number followed by a supported format. Supported formats are s, m, and h for seconds, minutes, and hours, respectively. For example, 5m would specify a 5 minutes interval for the data. If left blank, a default resolution will be calculated based on time range.",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
