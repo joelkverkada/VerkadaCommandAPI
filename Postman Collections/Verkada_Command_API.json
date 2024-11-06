@@ -1565,7 +1565,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getauditlogsviewv1](https://apidocs.verkada.com/reference/getauditlogsviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getauditlogsviewv1](https://apidocs.verkada.com/reference/getauditlogsviewv1)\n\nReturns audit logs for an organization within a specified time range.\n\nAll audit logs include a timestamp in ISO 8601 date time format, user info, IP address, event info and device info."
 							},
 							"response": []
 						}
@@ -1575,6 +1575,57 @@
 				{
 					"name": "Users",
 					"item": [
+						{
+							"name": "Delete User",
+							"id": "3437c8f5-3cc8-42a0-b05a-a382a68a997a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/core/v1/user?user_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"core",
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "",
+											"description": "The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "external_id",
+											"value": null,
+											"description": "A unique identifier managed externally provided by the consumer.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteuserviewv1](https://apidocs.verkada.com/reference/deleteuserviewv1)\n\nDeletes a user for an organization based on either provided user ID or an external ID set during creation."
+							},
+							"response": []
+						},
 						{
 							"name": "Get User",
 							"id": "b180f641-625d-46c5-88cb-e23fc39ee361",
@@ -1626,13 +1677,13 @@
 							"response": []
 						},
 						{
-							"name": "Delete User",
-							"id": "3437c8f5-3cc8-42a0-b05a-a382a68a997a",
+							"name": "Create User",
+							"id": "58b38601-b79f-46e2-80f4-0f82c7e046d0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "DELETE",
+								"method": "POST",
 								"header": [
 									{
 										"key": "x-api-key",
@@ -1645,34 +1696,17 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/core/v1/user?user_id=",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"core",
-										"v1",
-										"user"
-									],
-									"query": [
-										{
-											"key": "user_id",
-											"value": "",
-											"description": "The unique identifier of the user managed by Verkada."
-										},
-										{
-											"key": "external_id",
-											"value": null,
-											"description": "A unique identifier managed externally provided by the consumer.",
-											"disabled": true
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"company_name\": \"\",\n  \"department\": \"\",\n  \"department_id\": \"\",\n  \"email\": \"\",\n  \"employee_id\": \"\",\n  \"employee_type\": \"\",\n  \"external_id\": \"\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"middle_name\": \"\",\n  \"phone\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
-								"description": "[https://apidocs.verkada.com/reference/deleteuserviewv1](https://apidocs.verkada.com/reference/deleteuserviewv1)"
+								"url": "https://{{region}}.verkada.com/core/v1/user",
+								"description": "[https://apidocs.verkada.com/reference/postuserviewv1](https://apidocs.verkada.com/reference/postuserviewv1)"
 							},
 							"response": []
 						},
@@ -1733,40 +1767,6 @@
 									]
 								},
 								"description": "[https://apidocs.verkada.com/reference/putuserviewv1](https://apidocs.verkada.com/reference/putuserviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Create User",
-							"id": "58b38601-b79f-46e2-80f4-0f82c7e046d0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"company_name\": \"\",\n  \"department\": \"\",\n  \"department_id\": \"\",\n  \"email\": \"\",\n  \"employee_id\": \"\",\n  \"employee_type\": \"\",\n  \"external_id\": \"\",\n  \"first_name\": \"\",\n  \"last_name\": \"\",\n  \"middle_name\": \"\",\n  \"phone\": \"\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{region}}.verkada.com/core/v1/user",
-								"description": "[https://apidocs.verkada.com/reference/postuserviewv1](https://apidocs.verkada.com/reference/postuserviewv1)"
 							},
 							"response": []
 						}
