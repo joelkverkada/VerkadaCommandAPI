@@ -999,7 +999,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/gethistoryurlviewv1](https://apidocs.verkada.com/reference/gethistoryurlviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/gethistoryurlviewv1](https://apidocs.verkada.com/reference/gethistoryurlviewv1)\n\nReturns link to video footage for a specified camera which will play footage from a specified timestamp."
 							},
 							"response": []
 						},
@@ -1057,7 +1057,59 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)\n\nReturns a low-resolution or high-resolution thumbnail from a specified camera at or near a specified time.\n\nDefaults to low-resolution thumbnails.\n\nThe Get Thumbnail Image API endpoint allows users to automatically extract thumbnails from cameras within their Command organization by inputting a camera ID as well as a Unix timestamp in seconds.\n\nIt is important to note that although users must specify a timestamp at which to retrieve the specific image, the returned image may not exactly match that timestamp. The thumbnails that are returned through this endpoint are extracted from our cloud services as opposed to the camera itself. With that in mind, cameras will send a thumbnail every 20 seconds to our backend with an additional thumbnail sent if motion is detected during those 20 seconds. The returned thumbnail's associated timestamp will be as close as possible to the user-specified timestamp but may differ by up to 10 seconds (when no motion has been detected).\n\nThe call to the Get Thumbnail Image API endpoint returns the binary data of a JPEG image. Users can utilize standard image processing tools or libraries to decode and display the received binary data."
+							},
+							"response": []
+						},
+						{
+							"name": "Get Latest Thumbnail Image",
+							"id": "13bad0a0-6283-42dd-a6cb-e36d9a5c6693",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/thumbnails/latest?camera_id={{camera_id}}&resolution=hi-res",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"footage",
+										"thumbnails",
+										"latest"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "resolution",
+											"value": "hi-res",
+											"description": "An enumeration.  \"low-res\" or \"hi-res\".  Default: \"low-res\""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getthumbnaillatestviewv1](https://apidocs.verkada.com/reference/getthumbnaillatestviewv1)"
 							},
 							"response": []
 						},
@@ -1246,58 +1298,6 @@
 									]
 								},
 								"description": "[https://apidocs.verkada.com/reference/getfootagestreamviewv1](https://apidocs.verkada.com/reference/getfootagestreamviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Get Latest Thumbnail Image",
-							"id": "13bad0a0-6283-42dd-a6cb-e36d9a5c6693",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/footage/thumbnails/latest?camera_id={{camera_id}}&resolution=hi-res",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"footage",
-										"thumbnails",
-										"latest"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": "{{camera_id}}",
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										},
-										{
-											"key": "resolution",
-											"value": "hi-res",
-											"description": "An enumeration.  \"low-res\" or \"hi-res\".  Default: \"low-res\""
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/getthumbnaillatestviewv1](https://apidocs.verkada.com/reference/getthumbnaillatestviewv1)"
 							},
 							"response": []
 						}
