@@ -1672,7 +1672,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getuserviewv1](https://apidocs.verkada.com/reference/getuserviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getuserviewv1](https://apidocs.verkada.com/reference/getuserviewv1)\n\nReturns a user for an organization based on either provided user ID or an external ID set during creation."
 							},
 							"response": []
 						},
@@ -1706,7 +1706,7 @@
 									}
 								},
 								"url": "https://{{region}}.verkada.com/core/v1/user",
-								"description": "[https://apidocs.verkada.com/reference/postuserviewv1](https://apidocs.verkada.com/reference/postuserviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/postuserviewv1](https://apidocs.verkada.com/reference/postuserviewv1)\n\nCreates a user for in an organization. External ID required. Otherwise, the newly created user will contain a user ID which can be used for identification."
 							},
 							"response": []
 						},
@@ -1766,7 +1766,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/putuserviewv1](https://apidocs.verkada.com/reference/putuserviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/putuserviewv1](https://apidocs.verkada.com/reference/putuserviewv1)\n\nUpdates a user's metadata for an organization based on either provided user ID or an external ID set during creation."
 							},
 							"response": []
 						}
