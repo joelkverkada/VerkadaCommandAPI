@@ -582,6 +582,94 @@
 							"response": []
 						},
 						{
+							"name": "Update a License of Interest",
+							"id": "34b7bc45-8db2-41ec-9a3e-6fdbb8fdc96b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"description\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest?license_plate=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"license_plate_of_interest"
+									],
+									"query": [
+										{
+											"key": "license_plate",
+											"value": "",
+											"description": "** REQUIRED ** The license plate number of the License Plate of Interest. Update description in the Body."
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/patchlicenseplateofinterestviewv1](https://apidocs.verkada.com/reference/patchlicenseplateofinterestviewv1)\n\nUpdates a license plate description from License Plates of Interest using a specified license plate number.\n\nEach License Plate of Interest can be paired with a description for easier investigation and management. This UPDATE endpoint can be used to programmatically update a License Plate of Interest's (LPOI) description for your Command organization.\n\nThe endpoint takes two parameters:\n\n- `license_plate` - license plate of the LPOI description that needs to be updated\n    \n- `description` - updated description for the LPOI"
+							},
+							"response": []
+						},
+						{
+							"name": "Create a License Plate of Interest",
+							"id": "16639fc5-d462-4c64-9b53-69498540051c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}"
+									},
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"plate description\", // The description for the License Plate of Interest.\n  \"license_plate\": \"123abc\" // The license plate number of the License Plate of Interest.\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest",
+								"description": "[https://apidocs.verkada.com/reference/postlicenseplateofinterestviewv1](https://apidocs.verkada.com/reference/postlicenseplateofinterestviewv1)\n\nCreates a License Plate of Interest for an organization using a specified description and license plate number.\n\nThis endpoint allows users to programmatically create License Plates of Interest (LPOI) from their Command organization. To create the LPOI profile, the user will need to pass the exact license plate number as the `license_plate` parameter of the API request as well as the `description` of the created profile.\n\n**Note**: Make sure to use a clear description of the created LPOI to simplify investigations and profile management."
+							},
+							"response": []
+						},
+						{
 							"name": "Get Timestamps for a License Plate",
 							"id": "4112ed8f-34f4-4e12-b87a-947a2474c3d6",
 							"protocolProfileBehavior": {
@@ -651,92 +739,6 @@
 										}
 									]
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update a License of Interest",
-							"id": "34b7bc45-8db2-41ec-9a3e-6fdbb8fdc96b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \"description\": \"\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest?license_plate=",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"analytics",
-										"lpr",
-										"license_plate_of_interest"
-									],
-									"query": [
-										{
-											"key": "license_plate",
-											"value": "",
-											"description": "** REQUIRED ** The license plate number of the License Plate of Interest. Update description in the Body."
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Create a License Plate of Interest",
-							"id": "16639fc5-d462-4c64-9b53-69498540051c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}"
-									},
-									{
-										"key": "accept",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"description\": \"plate description\",\n  \"license_plate\": \"123abc\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest"
 							},
 							"response": []
 						}
