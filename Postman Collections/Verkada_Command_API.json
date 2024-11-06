@@ -315,7 +315,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"camera_id\": \"camera_id\",\n  \"client_password\": \"client_password\",\n  \"client_username\": \"client_username\",\n  \"broker_host_port\": \"443\",\n  \"broker_cert\": \"broker_cert\"\n}",
+									"raw": "{\n  \"camera_id\": \"camera_id\", // The unique identifier of the camera.\n  \"client_password\": \"client_password\", // The optional password for the server.\n  \"client_username\": \"client_username\", // The optional username for the server.\n  \"broker_host_port\": \"443\", // The host and port for MQTT server. The host could be an IP address or hostname. Port 443 is recommended, and only 443, 123, 53 are supported.\n  \"broker_cert\": \"broker_cert\" // A CA signed cert for broker to be used for TLS connection.\n}",
 									"options": {
 										"raw": {
 											"language": "json"
