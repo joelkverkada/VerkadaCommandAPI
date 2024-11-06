@@ -942,7 +942,7 @@
 									}
 								],
 								"url": "https://{{region}}.verkada.com/cameras/v1/devices",
-								"description": "[https://apidocs.verkada.com/reference/getcamerainfoviewv1](https://apidocs.verkada.com/reference/getcamerainfoviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getcamerainfoviewv1](https://apidocs.verkada.com/reference/getcamerainfoviewv1)\n\nReturns details of all cameras within the organization.\n\nDetails returned per camera are name, site, location, model, serial number, camera ID, MAC address, local IP, device retention, extended cloud retention (if any), date camera added to command, firmware update status, camera status, location latitude, location longitude, and location angle (in degrees)."
 							},
 							"response": []
 						}
