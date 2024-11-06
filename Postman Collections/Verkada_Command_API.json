@@ -1401,41 +1401,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Create a Person of Interest",
-							"id": "d248cbde-3791-454b-944a-7fab4fd28202",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"base64_image\": \"\",\n    \"label\": \"\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest",
-								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)\n\nReturns the time of creation, label, last time seen, and person ID for each Person of Interest for an organization."
 							},
 							"response": []
 						},
@@ -1461,7 +1427,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"label\": \"\"\n}",
+									"raw": "{\n    \"label\": \"\" // The name/label of the Person of Interest.\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1489,7 +1455,41 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/patchpersonofinterestviewv1](https://apidocs.verkada.com/reference/patchpersonofinterestviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/patchpersonofinterestviewv1](https://apidocs.verkada.com/reference/patchpersonofinterestviewv1)\n\nUpdates a label of Person of Interest for an organization using a specified person ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Person of Interest",
+							"id": "d248cbde-3791-454b-944a-7fab4fd28202",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"base64_image\": \"\", // The base64 encoded string of the face image of the Person of Interest.\n    \"label\": \"\" // The name/label of the Person of Interest.\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest",
+								"description": "[https://apidocs.verkada.com/reference/getpersonofinterestviewv1](https://apidocs.verkada.com/reference/getpersonofinterestviewv1)\n\nCreates a Person of Interest for an organization using a specified base64 encoded string of face image and label."
 							},
 							"response": []
 						}
