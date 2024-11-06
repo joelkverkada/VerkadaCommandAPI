@@ -738,12 +738,99 @@
 											"disabled": true
 										}
 									]
-								}
+								},
+								"description": "[https://apidocs.verkada.com/reference/getlprtimestampsview](https://apidocs.verkada.com/reference/getlprtimestampsview)\n\nReturns the timestamps for a certain license plate. Only works for cameras that are LPR enabled.\n\nResponse may be paginated if page_token exists.\n\nThis endpoint allows users to programmatically get the timestamps from specific license plate detections across their Verkada LPR fleet. To retrieve the timestamps, users must input a `camera_id` from a camera in LPR mode, as well as the exact `license_plate` string they are looking for.\n\nUsers also have the option to specify a `start_time` and `end_time` to narrow their search, as well as specify the returned `page_size`.\n\nDepending on the number of occurrences of the license plate, the returned JSON may be paginated. See the [Pagination](https://apidocs.verkada.com/reference/pagination) page for more information.\n\n**Note**: Retrieving the timestamps for license plates can only be done for a single camera at a time. It is possible to retrieve the results across multiple cameras through a script that sends multiple GET requests while iterating through a list of camera IDs."
 							},
 							"response": []
 						}
 					],
 					"id": "a5353cc6-fcd1-468b-8ca5-af73fc9fd140"
+				},
+				{
+					"name": "Audio",
+					"item": [
+						{
+							"name": "Get Camera Audio Status",
+							"id": "dbbdd1fe-583c-4f1c-a862-9d5bdd087a2b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/audio/status?camera_id",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"audio",
+										"status"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										}
+									]
+								},
+								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys).\n\n[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Camera Audio Status",
+							"id": "b6d3c957-2787-4715-8216-9b95229210fd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"camera_id\": \"\",\n    \"enabled\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/audio/status",
+								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys). This doesn't work if Camera Audio is globally disabled (visit [Feature Manager](https://help.verkada.com/en/articles/6937133-feature-manager)) or if audio is not supported by the camera model.\n\n[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "3a85da68-dbff-409a-83ac-a394e64b8c7a"
 				},
 				{
 					"name": "CloudBackup",
@@ -1408,92 +1495,6 @@
 						}
 					],
 					"id": "c1f20ba4-f345-496d-927e-4d393e123f1f"
-				},
-				{
-					"name": "Audio",
-					"item": [
-						{
-							"name": "Get Camera Audio Status",
-							"id": "dbbdd1fe-583c-4f1c-a862-9d5bdd087a2b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/audio/status?camera_id",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"audio",
-										"status"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": null,
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										}
-									]
-								},
-								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys).\n\n[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Update Camera Audio Status",
-							"id": "b6d3c957-2787-4715-8216-9b95229210fd",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"camera_id\": \"\",\n    \"enabled\": true\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{region}}.verkada.com/cameras/v1/audio/status",
-								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys). This doesn't work if Camera Audio is globally disabled (visit [Feature Manager](https://help.verkada.com/en/articles/6937133-feature-manager)) or if audio is not supported by the camera model.\n\n[https://apidocs.verkada.com/reference/postcameraaudioviewv1](https://apidocs.verkada.com/reference/postcameraaudioviewv1)"
-							},
-							"response": []
-						}
-					],
-					"id": "3a85da68-dbff-409a-83ac-a394e64b8c7a"
 				}
 			],
 			"id": "134dddd1-cb27-42e8-b5df-457eade40b18"
