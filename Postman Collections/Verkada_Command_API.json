@@ -476,7 +476,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getlprimagesview](https://apidocs.verkada.com/reference/getlprimagesview)\n\nReturns the timestamps, detected license plate numbers, and images of all license plates seen by a camera.\n\nOnly works for cameras that are LPR enabled.\n\nResponse may be paginated if page_token exists."
+								"description": "[https://apidocs.verkada.com/reference/getlprimagesview](https://apidocs.verkada.com/reference/getlprimagesview)\n\nReturns the timestamps, detected license plate numbers, and images of all license plates seen by a camera.\n\nOnly works for cameras that are LPR enabled.\n\nResponse may be paginated if page_token exists.\n\nThis endpoint allows users to programmatically get the detected timestamps, detected license plate numbers, and images of all license plates seen by a Verkada LPR camera. To retrieve the detections, users must input a `camera_id` from a camera in LPR mode.\n\nUsers also have the option to specify a `start_time` and `end_time` to narrow their search, as well as a `license_plate` string to filter results by, and a returned `page_size`.\n\nDepending on the number of seen license plates, the returned JSON may be paginated. See the [Pagination](https://apidocs.verkada.com/reference/pagination) page for more information.\n\n**Note**: Retrieving the seen license plates can only be done for a single camera at a time. It is possible to retrieve the results across multiple cameras through a script that sends multiple GET requests while iterating through a list of camera IDs."
 							},
 							"response": []
 						},
@@ -522,7 +522,62 @@
 											"description": "** REQUIRED ** The license plate number of the License Plate of Interest."
 										}
 									]
-								}
+								},
+								"description": "[https://apidocs.verkada.com/reference/deletelicenseplateofinterestviewv1](https://apidocs.verkada.com/reference/deletelicenseplateofinterestviewv1)\n\nDeletes a license plate from License Plates of Interest using a specified license plate number.\n\nThis endpoint allows users to programmatically delete License Plates of Interest (LPOI) from their Command organization. To specify which LPOI should be deleted, the user will need to pass the exact license plate number as the `license_plate` parameter of the API request.\n\n**Note**: The inputted `license_plate` must be an exact match of the LPOI profile in Command, otherwise the License Plate of Interest will not be deleted."
+							},
+							"response": []
+						},
+						{
+							"name": "Get All License Plates of Interest",
+							"id": "aa43d0ba-d2b4-42e1-a863-6a0cf0c1ab22",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"lpr",
+										"license_plate_of_interest"
+									],
+									"query": [
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 1000. Max is 200.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getlicenseplateofinterestviewv1](https://apidocs.verkada.com/reference/getlicenseplateofinterestviewv1)\n\nReturns creation time, description, and license plate number for all License Plates of Interest for an organization.\n\nThis endpoint will programmatically return all License Plate of Interests which are active in a Command organization. Any deleted LPOI profiles will not be included in the response JSON. The returned JSON text will include a comprehensive list of all LPOI profiles including their creation time and license plate number.\n\n**Note:** Depending on the number of LPOIs active in your organization, the returned JSON may be paginated. See the [Pagination](https://apidocs.verkada.com/reference/pagination) page for more information."
 							},
 							"response": []
 						},
@@ -586,59 +641,6 @@
 											"key": "page_size",
 											"value": "",
 											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
-											"disabled": true
-										},
-										{
-											"key": "page_token",
-											"value": "",
-											"description": "The pagination token used to fetch the next page of results.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get All License Plates of Interest",
-							"id": "aa43d0ba-d2b4-42e1-a863-6a0cf0c1ab22",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/lpr/license_plate_of_interest",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"analytics",
-										"lpr",
-										"license_plate_of_interest"
-									],
-									"query": [
-										{
-											"key": "page_size",
-											"value": "",
-											"description": "The number of items returned in a single response. Default is 1000. Max is 200.",
 											"disabled": true
 										},
 										{
