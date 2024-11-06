@@ -88,7 +88,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getnotificationsviewv1](https://apidocs.verkada.com/reference/getnotificationsviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getnotificationsviewv1](https://apidocs.verkada.com/reference/getnotificationsviewv1)\n\nReturns alerts for an organization within a specified time range.\n\nAlert types include camera offline, camera online, tamper, motion, crowd, and Person of Interest alerts.\n\nMotion alerts include whether people and/or vehicles were detected.\n\nCrowd alerts include the threshold set for the camera that detected the crowd and whether people or vehicles were detected.\n\nPerson of Interest alerts include the label set for the person."
 							},
 							"response": []
 						}
