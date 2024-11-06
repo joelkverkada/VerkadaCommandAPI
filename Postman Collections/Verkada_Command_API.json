@@ -96,6 +96,317 @@
 					"id": "53931a5f-df7b-430d-b5c9-d188b7ec5df8"
 				},
 				{
+					"name": "Analytics",
+					"item": [
+						{
+							"name": "Get Occupancy Trend Data",
+							"id": "239e61e9-2093-47a4-89ab-361d32c98a73",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"occupancy_trends"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "interval",
+											"value": "",
+											"description": "An enumeration: \"15_minutes\", \"1_hour\", \"6_hours\", \"12_hours\", \"1_day\", \"30_days\".  Default \"1_hour\"",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "",
+											"description": "An enumeration: \"person\" or \"vehicle\".  Default = \"person\"",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Occupancy Trend Data Copy",
+							"id": "da61ff7a-1c3b-42ea-960d-68fab2f04db5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"occupancy_trends"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to an hour from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
+											"disabled": true
+										},
+										{
+											"key": "interval",
+											"value": "",
+											"description": "An enumeration: \"15_minutes\", \"1_hour\", \"6_hours\", \"12_hours\", \"1_day\", \"30_days\".  Default \"1_hour\"",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "",
+											"description": "An enumeration: \"person\" or \"vehicle\".  Default = \"person\"",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Max People/Vehicle Counts",
+							"id": "fb0d5cd1-11a5-4d5b-b8f0-742ff6bbc8d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/max_object_counts?camera_id={{camera_id}}&start_time=&end_time=&search_zones=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"max_object_counts"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time. If only providing a start time, the same value will be used for end_time\n"
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. It can only be used if start_time is also provided"
+										},
+										{
+											"key": "search_zones",
+											"value": "",
+											"description": "Zones to search Formatted as coordinates ranging from [0,0] to [9,9] e.g., [[3,3],[3,4],[4,3],[4,4]]"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1](https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1)"
+							},
+							"response": []
+						},
+						{
+							"name": "Set Object Position MQTT Config",
+							"id": "ff309173-11d8-4907-ab6b-aad4b1296cdf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"camera_id\": \"camera_id\",\n  \"client_password\": \"client_password\",\n  \"client_username\": \"client_username\",\n  \"broker_host_port\": \"443\",\n  \"broker_cert\": \"broker_cert\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/object_position_mqtt",
+								"description": "[https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview](https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get People/Vehicle Counts",
+							"id": "371dec27-14a5-4489-abb5-5eb32b13616d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/object_counts?camera_id={{camera_id}}",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"analytics",
+										"object_counts"
+									],
+									"query": [
+										{
+											"key": "camera_id",
+											"value": "{{camera_id}}",
+											"description": "** REQUIRED ** The unique identifier of the camera."
+										},
+										{
+											"key": "start_time",
+											"value": "",
+											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is an hour ago from the current time.",
+											"disabled": true
+										},
+										{
+											"key": "end_time",
+											"value": "",
+											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time.",
+											"disabled": true
+										},
+										{
+											"key": "page_token",
+											"value": "",
+											"description": "The pagination token used to fetch the next page of results.",
+											"disabled": true
+										},
+										{
+											"key": "page_size",
+											"value": "",
+											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
+											"disabled": true
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/getobjectcountsviewv1](https://apidocs.verkada.com/reference/getobjectcountsviewv1)"
+							},
+							"response": []
+						}
+					],
+					"id": "7fe752d5-e873-46f6-bdb3-d49805c53834"
+				},
+				{
 					"name": "LPR",
 					"item": [
 						{
@@ -434,247 +745,6 @@
 						}
 					],
 					"id": "a5353cc6-fcd1-468b-8ca5-af73fc9fd140"
-				},
-				{
-					"name": "Analytics",
-					"item": [
-						{
-							"name": "Get Max People/Vehicle Counts",
-							"id": "fb0d5cd1-11a5-4d5b-b8f0-742ff6bbc8d1",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/max_object_counts?camera_id={{camera_id}}&start_time=&end_time=&search_zones=",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"analytics",
-										"max_object_counts"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": "{{camera_id}}",
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										},
-										{
-											"key": "start_time",
-											"value": "",
-											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time. If only providing a start time, the same value will be used for end_time\n"
-										},
-										{
-											"key": "end_time",
-											"value": "",
-											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. It can only be used if start_time is also provided"
-										},
-										{
-											"key": "search_zones",
-											"value": "",
-											"description": "Zones to search Formatted as coordinates ranging from [0,0] to [9,9] e.g., [[3,3],[3,4],[4,3],[4,4]]"
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1](https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Set Object Position MQTT Config",
-							"id": "ff309173-11d8-4907-ab6b-aad4b1296cdf",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"camera_id\": \"camera_id\",\n  \"client_password\": \"client_password\",\n  \"client_username\": \"client_username\",\n  \"broker_host_port\": \"443\",\n  \"broker_cert\": \"broker_cert\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://{{region}}.verkada.com/cameras/v1/analytics/object_position_mqtt",
-								"description": "[https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview](https://apidocs.verkada.com/reference/postoccupancytrendsmqttconfigview)"
-							},
-							"response": []
-						},
-						{
-							"name": "Get People/Vehicle Counts",
-							"id": "371dec27-14a5-4489-abb5-5eb32b13616d",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/object_counts?camera_id={{camera_id}}",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"analytics",
-										"object_counts"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": "{{camera_id}}",
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										},
-										{
-											"key": "start_time",
-											"value": "",
-											"description": "The start of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is an hour ago from the current time.",
-											"disabled": true
-										},
-										{
-											"key": "end_time",
-											"value": "",
-											"description": "The end of the time range for requested counts. Formatted as a Unix timestamp in seconds. Default value is the current time.",
-											"disabled": true
-										},
-										{
-											"key": "page_token",
-											"value": "",
-											"description": "The pagination token used to fetch the next page of results.",
-											"disabled": true
-										},
-										{
-											"key": "page_size",
-											"value": "",
-											"description": "The number of items returned in a single response. Default is 100. Max is 200.",
-											"disabled": true
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/getobjectcountsviewv1](https://apidocs.verkada.com/reference/getobjectcountsviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Get Occupancy Trend Data",
-							"id": "239e61e9-2093-47a4-89ab-361d32c98a73",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?camera_id={{camera_id}}",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"analytics",
-										"occupancy_trends"
-									],
-									"query": [
-										{
-											"key": "camera_id",
-											"value": "{{camera_id}}",
-											"description": "** REQUIRED ** The unique identifier of the camera."
-										},
-										{
-											"key": "start_time",
-											"value": "",
-											"description": "The start of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to an hour from the current time.",
-											"disabled": true
-										},
-										{
-											"key": "end_time",
-											"value": "",
-											"description": "The end of the time range for occupancy trends. Formatted as a Unix timestamp in seconds. Defaults to the current time.",
-											"disabled": true
-										},
-										{
-											"key": "interval",
-											"value": "",
-											"description": "An enumeration: \"15_minutes\", \"1_hour\", \"6_hours\", \"12_hours\", \"1_day\", \"30_days\".  Default \"1_hour\"",
-											"disabled": true
-										},
-										{
-											"key": "type",
-											"value": "",
-											"description": "An enumeration: \"person\" or \"vehicle\".  Default = \"person\"",
-											"disabled": true
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
-							},
-							"response": []
-						}
-					],
-					"id": "7fe752d5-e873-46f6-bdb3-d49805c53834"
 				},
 				{
 					"name": "CloudBackup",
