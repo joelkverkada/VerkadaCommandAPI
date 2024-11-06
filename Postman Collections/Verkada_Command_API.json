@@ -164,7 +164,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
+								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)\n\nReturns all occupancy trends data for a particular camera over a specified time range.\n\nResponses will include the start and end time of the data requested and device information (ID, serial number) alongside the readings."
 							},
 							"response": []
 						},
@@ -189,7 +189,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?camera_id={{camera_id}}",
+									"raw": "https://{{region}}.verkada.com/cameras/v1/analytics/occupancy_trends?dashboard_id=",
 									"protocol": "https",
 									"host": [
 										"{{region}}",
@@ -204,9 +204,9 @@
 									],
 									"query": [
 										{
-											"key": "camera_id",
-											"value": "{{camera_id}}",
-											"description": "** REQUIRED ** The unique identifier of the camera."
+											"key": "dashboard_id",
+											"value": "",
+											"description": "** REQUIRED ** The unique identifier of the dashboard.\n\n"
 										},
 										{
 											"key": "start_time",
@@ -225,16 +225,10 @@
 											"value": "",
 											"description": "An enumeration: \"15_minutes\", \"1_hour\", \"6_hours\", \"12_hours\", \"1_day\", \"30_days\".  Default \"1_hour\"",
 											"disabled": true
-										},
-										{
-											"key": "type",
-											"value": "",
-											"description": "An enumeration: \"person\" or \"vehicle\".  Default = \"person\"",
-											"disabled": true
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getoccupancytrendsview](https://apidocs.verkada.com/reference/getoccupancytrendsview)"
+								"description": "[https://apidocs.verkada.com/reference/getdashboardoccupancytrendsview](https://apidocs.verkada.com/reference/getdashboardoccupancytrendsview)\n\nReturns all occupancy trends data for a particular dashboard over a specified time range.\n\nResponses will include the start and end time of the data requested and org, dashboard information (ID, name) alongside the readings."
 							},
 							"response": []
 						},
@@ -295,7 +289,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1](https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1](https://apidocs.verkada.com/reference/getmaxobjectcountsviewv1)\n\nReturns the max count of people and vehicles within a specified time range."
 							},
 							"response": []
 						},
@@ -399,7 +393,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getobjectcountsviewv1](https://apidocs.verkada.com/reference/getobjectcountsviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getobjectcountsviewv1](https://apidocs.verkada.com/reference/getobjectcountsviewv1)\n\nReturns the count of people and vehicles within a specified time range."
 							},
 							"response": []
 						}
