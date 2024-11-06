@@ -817,7 +817,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"camera_id\": \"\",\n    \"enabled\": true\n}",
+									"raw": "{\n    \"camera_id\": \"\", // The unique identifier of the camera.\n    \"enabled\": true // The status of audio for the camera. If value is True, audio is turned on for the camera.\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -903,7 +903,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"camera_id\": \"\",\n  \"days_to_preserve\": \"\",\n  \"enabled\": 1,\n  \"time_to_preserve\": \"\",\n  \"upload_timeslot\": \"\",\n  \"video_quality\": \"\",\n  \"video_to_upload\": \"\"\n}",
+									"raw": "{\n  \"camera_id\": \"\", // The unique identifier of the camera.\n  \"days_to_preserve\": \"\", // Delimited list of booleans indicating which days footage should be uploaded. The elements in the array indicate the following days in order: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday. If value is 1, cloud backup is on for that day. If value is 0, cloud backup is off for that day. For example, 0,1,1,1,1,1,0 means only backup on weekdays.\n  \"enabled\": 1, // Status of cloud backup for a camera. If value is 1, cloud backup is enabled. If value is 0, cloud backup is disabled.\n  \"time_to_preserve\": \"\", // Delimited list of start_time, end_time as timeslot for which a user wants footage to be backed up to the cloud, start_time and end_time are integers indicating seconds to midnight, i.e, 3600,7200 means 1am - 2am\n  \"upload_timeslot\": \"\", // Delimited list of start_time, end_time as timeslot for scheduled time for footage upload, start_time and end_time are integers indicating seconds to midnight, i.e, 3600,7200 means 1am - 2am\n  \"video_quality\": \"\", // Quality of the uploaded video. Two values are possible: STANDARD_QUALITY and HIGH_QUALITY.\n  \"video_to_upload\": \"\" // The type of video that is backed-up. Two values are possible: MOTION and ALL.\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -911,7 +911,7 @@
 									}
 								},
 								"url": "https://{{region}}.verkada.com/cameras/v1/cloud_backup/settings",
-								"description": "[https://apidocs.verkada.com/reference/postcloudbackupviewv1](https://apidocs.verkada.com/reference/postcloudbackupviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/postcloudbackupviewv1](https://apidocs.verkada.com/reference/postcloudbackupviewv1)\n\nIf camera cloud backup has been enabled and disabled before, enabling it again will start backup from last disabled time."
 							},
 							"response": []
 						}
