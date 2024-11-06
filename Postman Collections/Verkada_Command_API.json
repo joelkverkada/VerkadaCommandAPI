@@ -169,7 +169,7 @@
 							"response": []
 						},
 						{
-							"name": "Get Occupancy Trend Data Copy",
+							"name": "Get Dashboard Occupancy Trend Data",
 							"id": "da61ff7a-1c3b-42ea-960d-68fab2f04db5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
