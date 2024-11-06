@@ -791,7 +791,7 @@
 										}
 									]
 								},
-								"description": "To use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys).\n\n[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)\n\nTo use the Camera Audio API, you will need to generate an “Camera Audio” API key (separate from Read only and Read/write API keys).\n\n[https://apidocs.verkada.com/reference/getcameraaudioviewv1](https://apidocs.verkada.com/reference/getcameraaudioviewv1)"
 							},
 							"response": []
 						},
