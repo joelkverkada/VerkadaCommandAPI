@@ -1109,7 +1109,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getthumbnaillatestviewv1](https://apidocs.verkada.com/reference/getthumbnaillatestviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getthumbnaillatestviewv1](https://apidocs.verkada.com/reference/getthumbnaillatestviewv1)\n\nReturns the latest thumbnail from a specified camera in either low resolution or high resolution.\n\nThe Get Latest Thumbnail Image API endpoint provides users with the capability to automatically retrieve the most recent thumbnail captured by cameras within their Command organization. To utilize this endpoint, users need to provide a camera ID.\n\nSimilar to the Get Thumbnail Image API, the thumbnails retrieved through this endpoint are sourced from our cloud services rather than directly from the camera. Cameras transmit thumbnails to our backend approximately every 20 seconds, with an additional thumbnail sent if motion is detected during that timeframe. When making a call to this endpoint, the returned thumbnail will have an associated timestamp as close as possible to the latest recorded footage. However, due to the asynchronous nature of thumbnail transmission, there may be a variance of up to 10 seconds when no motion is detected.\n\nUpon calling the Get Latest Thumbnail Image API, users will receive the binary data of a JPEG image. Decoding and displaying this binary data can be accomplished using standard image processing tools or libraries."
 							},
 							"response": []
 						},
@@ -1168,7 +1168,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getthumbnailimageviewv1](https://apidocs.verkada.com/reference/getthumbnailimageviewv1)\n\nReturns a link to thumbnail image from a specified camera at a specified time.\n\nThe Get Thumbnail Link API endpoint allows users to extract thumbnail links from cameras within their Command organization by inputting a camera ID as well as a Unix timestamp in seconds.\n\nIt is important to note that although users must specify a timestamp at which to retrieve the specific image, the returned link's image may not exactly match that timestamp. The thumbnails that are returned through this endpoint are extracted from our cloud services as opposed to the camera itself. With that in mind, cameras will send a thumbnail every 20 seconds to our backend with an additional thumbnail sent if motion is detected during those 20 seconds. The thumbnail's associated timestamp will be as close as possible to the user-specified timestamp but may differ by up to 10 seconds (when no motion has been detected).\n\nThe call to the Get Thumbnail Image API endpoint returns the binary data of a JPEG image. Users can utilize standard image processing tools or libraries to decode and display the received binary data."
 							},
 							"response": []
 						},
@@ -1214,7 +1214,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getfootagetokenviewv1](https://apidocs.verkada.com/reference/getfootagetokenviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getfootagetokenviewv1](https://apidocs.verkada.com/reference/getfootagetokenviewv1)\n\nThis is a prerequisite to stream live or historical footage. It returns a JWT (JSON Web Token) which is required to access the streaming endpoint. For detailed information on streaming footage, refer to [Stream Footage (Live or Historical)](https://apidocs.verkada.com/reference/getfootagestreamviewv1)."
 							},
 							"response": []
 						},
@@ -1239,7 +1239,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{region}}.verkada.com/stream/cameras/v1/footage/stream/stream.m3u8?org_id={{org_id}}&camera_id={{camera_id}}&start_time=0&end_time=0&resolution=low_res&type=stream&jwt={{streamJWT}}&codec=hevc",
+									"raw": "https://{{region}}.verkada.com/stream/cameras/v1/footage/stream/stream.m3u8?org_id={{org_id}}&camera_id={{camera_id}}&start_time=0&end_time=0&resolution=low_res&type=stream&jwt=insert_stream_JWT&codec=hevc",
 									"protocol": "https",
 									"host": [
 										"{{region}}",
@@ -1287,7 +1287,7 @@
 										},
 										{
 											"key": "jwt",
-											"value": "{{streamJWT}}",
+											"value": "insert_stream_JWT",
 											"description": "A short lived token that will be used to verify the permission to stream live or history footage from the camera. This can be acquired with the Get Streaming Token endpoint."
 										},
 										{
@@ -1297,7 +1297,7 @@
 										}
 									]
 								},
-								"description": "[https://apidocs.verkada.com/reference/getfootagestreamviewv1](https://apidocs.verkada.com/reference/getfootagestreamviewv1)"
+								"description": "[https://apidocs.verkada.com/reference/getfootagestreamviewv1](https://apidocs.verkada.com/reference/getfootagestreamviewv1)\n\nAlthough many Verkada customers access camera footage via Command, we offer a flexible solution for integrating third-party applications with Verkada cameras. Streaming API allows users to stream both live and historical footage from cameras using the [HLS (HTTP Live Streaming) protocol](https://developer.apple.com/streaming/). HLS is an open protocol designed for streaming media content over the internet, supported by many video players. This document serves as a guide for integrating camera footage into third-party applications."
 							},
 							"response": []
 						}
@@ -1307,6 +1307,51 @@
 				{
 					"name": "People",
 					"item": [
+						{
+							"name": "Delete a Person of Interest",
+							"id": "3e1e311b-e6e8-490e-a2b8-ebf260353c16",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest?person_id=",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"cameras",
+										"v1",
+										"people",
+										"person_of_interest"
+									],
+									"query": [
+										{
+											"key": "person_id",
+											"value": ""
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deletepersonofinterestviewv1](https://apidocs.verkada.com/reference/deletepersonofinterestviewv1)\n\nDeletes a Person of Interest from an organization using a specified person ID."
+							},
+							"response": []
+						},
 						{
 							"name": "Get All Person of Interest",
 							"id": "41ac4127-d110-4e82-ba1b-756d645d33cd",
@@ -1445,51 +1490,6 @@
 									]
 								},
 								"description": "[https://apidocs.verkada.com/reference/patchpersonofinterestviewv1](https://apidocs.verkada.com/reference/patchpersonofinterestviewv1)"
-							},
-							"response": []
-						},
-						{
-							"name": "Delete a Person of Interest",
-							"id": "3e1e311b-e6e8-490e-a2b8-ebf260353c16",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									},
-									{
-										"key": "accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/cameras/v1/people/person_of_interest?person_id=",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"cameras",
-										"v1",
-										"people",
-										"person_of_interest"
-									],
-									"query": [
-										{
-											"key": "person_id",
-											"value": ""
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/deletepersonofinterestviewv1](https://apidocs.verkada.com/reference/deletepersonofinterestviewv1)"
 							},
 							"response": []
 						}
