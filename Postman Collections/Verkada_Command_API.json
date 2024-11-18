@@ -7,6 +7,25 @@
 	},
 	"item": [
 		{
+			"name": "API Tokens",
+			"item": [
+				{
+					"name": "Get API Token",
+					"id": "f552ef82-cd4c-4eee-85f4-327f2abbba09",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "[https://apidocs.verkada.com/reference/postloginapikeyviewv2](https://apidocs.verkada.com/reference/postloginapikeyviewv2)\n\nAPI Tokens are required to make requests to any Verkada API endpoints with the exception of the Get Streaming Token endpoints, which requires a top-level API Key for authentication, as well as the Stream Footage (live or historical) API that requires a JSON Web Token (JWT).\n\nAPI Tokens inherit permissions from the top-level API key used to generate them and will be limited to that same permission scope. If the API Key used to generate an API Token only has Camera Read-Only permissions, then the associated API Token would only be authorized to call Camera GET endpoints.\n\nAPI Tokens are valid for 30 minutes and cannot be refreshed. Users will need to call the Get API Token endpoint again to retrieve a new Token if their previous one has expired. When making a call using an expired API Token, users will receive a 401 Authentication Error as well as the following error message:\n\n`{'id': '0e2d', 'message': 'Token expired', 'data': None}`"
+					},
+					"response": []
+				}
+			],
+			"id": "9df149ca-fb43-4413-908d-98f2f4409e54"
+		},
+		{
 			"name": "Camera API",
 			"item": [
 				{
