@@ -3233,7 +3233,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    // The unique identifier of the user managed by Verkada.\n    \"user_id\": \"\",\n    \"door_id\": \"\"\n    // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\"\n}",
+									"raw": "{\n    \"user_id\": \"\", // The unique identifier of the user managed by Verkada.\n    \"door_id\": \"\" // The unique identifier managed externally provided by the customer.\n    // \"external_id\": \"\" An externally defined unique identifier provided by the customer.\n}",
 									"options": {
 										"raw": {
 											"language": "json"
