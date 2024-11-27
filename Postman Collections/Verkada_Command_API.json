@@ -3514,13 +3514,13 @@
 							"response": []
 						},
 						{
-							"name": "Delete a Guest deny list Copy",
+							"name": "Post Guest Deny List",
 							"id": "486a7b7b-0fc1-4075-890e-ec7a60b6f39e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "DELETE",
+								"method": "POST",
 								"header": [
 									{
 										"key": "x-api-key",
@@ -3533,29 +3533,8 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "https://{{region}}.verkada.com/guest/v1/deny_list?site_id",
-									"protocol": "https",
-									"host": [
-										"{{region}}",
-										"verkada",
-										"com"
-									],
-									"path": [
-										"guest",
-										"v1",
-										"deny_list"
-									],
-									"query": [
-										{
-											"key": "site_id",
-											"value": null,
-											"description": "The unique identifier of the Guest site. Valid sites can be retrieved with the Guest Site API.",
-											"type": "text"
-										}
-									]
-								},
-								"description": "[https://apidocs.verkada.com/reference/deletedenylistview](https://apidocs.verkada.com/reference/deletedenylistview)\n\nDeletes all deny list entries, including the CSV, POI entries, and photos from the S3 buckets."
+								"url": "https://{{region}}.verkada.com/guest/v1/deny_list",
+								"description": "[https://apidocs.verkada.com/reference/postdenylistview](https://apidocs.verkada.com/reference/postdenylistview)\n\nUploads deny list in csv format to vdoorman."
 							},
 							"response": []
 						}
@@ -3586,7 +3565,7 @@
 									}
 								],
 								"url": "https://{{region}}.verkada.com/guest/v1/sites",
-								"description": "[https://apidocs.verkada.com/reference/getguestsiteview](https://apidocs.verkada.com/reference/getguestsiteview)"
+								"description": "[https://apidocs.verkada.com/reference/getguestsiteview](https://apidocs.verkada.com/reference/getguestsiteview)\n\nReturns a list of Guest sites in an organization."
 							},
 							"response": []
 						}
