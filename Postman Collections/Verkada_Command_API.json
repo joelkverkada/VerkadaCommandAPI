@@ -2134,8 +2134,141 @@
 										"type": "text"
 									}
 								],
-								"url": "https://{{region}}.verkada.com/access/v1/access_users/user/profile_photo",
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/profile_photo?user_id&original",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"profile_photo"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the user managed by Verkada.",
+											"type": "text"
+										},
+										{
+											"key": "original",
+											"value": null,
+											"description": "Whether to get the original or cropped image. true/false",
+											"type": "text"
+										}
+									]
+								},
 								"description": "[https://apidocs.verkada.com/reference/getprofilephotoviewv1](https://apidocs.verkada.com/reference/getprofilephotoviewv1)\n\nThis retrieves a profile photo for the specified user."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Profile Photo",
+							"id": "b0407a42-dfeb-46ff-a520-8b90dddc1e53",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/profile_photo?user_id&original",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"profile_photo"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "original",
+											"value": null,
+											"description": "Whether to get the original or cropped image. true/false"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/deleteprofilephotoviewv1](https://apidocs.verkada.com/reference/deleteprofilephotoviewv1)\n\nThis deletes a profile photo for the specified user."
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Profile Photo",
+							"id": "bde7cb87-cb8b-48ae-b3ce-7f8ec9380dce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									},
+									{
+										"key": "accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{region}}.verkada.com/access/v1/access_users/user/profile_photo?user_id&original",
+									"protocol": "https",
+									"host": [
+										"{{region}}",
+										"verkada",
+										"com"
+									],
+									"path": [
+										"access",
+										"v1",
+										"access_users",
+										"user",
+										"profile_photo"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": null,
+											"description": "** REQUIRED ** The unique identifier of the user managed by Verkada."
+										},
+										{
+											"key": "original",
+											"value": null,
+											"description": "Whether to get the original or cropped image. true/false"
+										}
+									]
+								},
+								"description": "[https://apidocs.verkada.com/reference/putprofilephotoviewv1](https://apidocs.verkada.com/reference/putprofilephotoviewv1)\n\nThis uploads a profile photo for the specified user."
 							},
 							"response": []
 						},
