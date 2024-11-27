@@ -3465,6 +3465,24 @@
 			"name": "Guest API",
 			"item": [
 				{
+					"name": "Deny List",
+					"item": [
+						{
+							"name": "Delete a Guest deny list",
+							"id": "cd09757a-51d1-44f0-b643-e4ebdb396999",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "eaaa983f-a724-47d3-be13-bf640c08df53"
+				},
+				{
 					"name": "Sites",
 					"item": [
 						{
