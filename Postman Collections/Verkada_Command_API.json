@@ -59,7 +59,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "x-api-key",
+										"key": "x-verkada-auth",
 										"value": "{{x-api-key}}",
 										"type": "text"
 									},
